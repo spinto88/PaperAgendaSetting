@@ -60,7 +60,7 @@ It looks for answering the question if the media is able to set the public agend
 This stage is sometimes called the ``first level agenda-setting''.  The very often quoted phrase of Bernard C. Cohen \textit{``The press may not be successful much of the time in telling people what to think, but it is stunningly successful in telling its readers what to think about.''} illustrates its object of study. With the emergency of the Internet, the end of agenda-setting were predicted due to the audience fragmentation onto multiple sources, which would virtually lead to a highly individualized agenda. However, it is based on two assumptions that are not necessarily true: the public spreads its attention in an homogeneous way across the multiple sources, and that the agendas of that sources are different \cite{mccombs2005look}.
 
 
-\par Since the Chapel Hill research, several directions of agenda-setting were established \cite{mccombs2005look}.
+\par From the Chapel Hill research, several directions of agenda-setting were established \cite{mccombs2005look}.
 The ``second level agenda-setting'', sometimes called \textit{attribute agenda-setting}, studies the \textit{objects} (in a social psychology way, where an \textit{attitude object} designate a thing that an individual has an attitude or opinion about) present in the media agenda. When the media talks about an object some attributes are emphasized, and others not. 
 This theory is linked with \textit{framing} \cite{guggenheim2015dynamics, tsur2015frame}. 
 To frame is to \textit{select some aspects of a perceived reality and make them more salient in a communicating text, in such a way as to promote a particular problem definition, causal interpretation, moral evaluation and/or treatment recommendation} (Robert Entman) \cite{mccombs2005look}.
@@ -83,7 +83,7 @@ Several works by E. Zunino, like \cite{zunino2010cobertura} and \cite{koziner201
 \par Most of the works cited above follow typical methods of social science research. However, a useful tool in the analysis of large corpus of documents, which is not widely used in the agenda setting theory, is unsupervised topic modeling. These methods are an alternative to the dictionary-based analysis, which is the most popular automated analysis approach \cite{guo2016big}, and allows to work with a corpus without a prior knowledge, letting the topics emerge from the data. Despite the popularity of these methods in other fields, they have been under-employed in the agenda setting framework.
 Many works based on news corpus emphasize the performance of the topic model over a labeled corpus, focusing on the proper detection of the topics \cite{dai2010online, po2016topic, brun2000experiment}. The temporal profile of topics is usually embedded in the context of topic tracking \cite{hu2016news, li2017joint}, or in the recognition of emerging topics in real-time \cite{cataldi2010emerging} mostly applied to social media. 
 
-\par A typical  dynamical analysis of Agenda Setting is focused on a single issue. For instance, in \cite{soroka2017negativity} it is shown that the newspapers and Twitter have an opposite reaction to the changes of the unemployment rates. In \cite{guggenheim2015dynamics} the competition of frames about gun control is explored, and in \cite{ali2018measuring} the authors show how fluctuations of  twitter activity in different regions depend on the location of terrorist attacks.
+\par A typical dynamical analysis of Agenda Setting is focused on a single issue. For instance, in \cite{soroka2017negativity} it is shown that the newspapers and Twitter have an opposite reaction to the changes of the unemployment rates. In \cite{guggenheim2015dynamics} the competition of frames about gun control is explored, and in \cite{ali2018measuring} the authors show how fluctuations of  twitter activity in different regions depend on the location of terrorist attacks.
 A remarkable exception is found in  \cite{russell2014dynamics}, where they work with a set of predefined issues. In this work the question of \emph{causality} is also faced up. Their study shows that sometimes the traditional media set the agenda and sometimes the social media does. They show that social media is always more interested in social issues than the traditional one, and despite the existence of correlation, the social media agenda can not be seen as a \emph{slave} of the traditional media.
 However, a drawback of working with predefined issues is that they usually reflects general themes, such as unemployment or crime, and the issues selection must be made by the researcher. 
 
@@ -98,50 +98,36 @@ On the other hand, we aim to take an insight about Media dynamics and Public res
 
 \subsection{The Media Agenda}
 
-In this work we analyze a three month period of the Argentinian Media's Agenda composed a corpus of news' articles that were published between July 31th and November 5th in the section \emph{Politics} of the electronic editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\''on}, \emph{P\'agina12}, and the news portal \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \footnote{www.ivc.org.ar}. On the other hand, \emph{Infobae} has the website with more visitors, above the websites of \emph{Clar\'in} and \emph{La Naci\'on} \footnote{https://www.alexa.com/topsites/countries/AR}.
+In this work we analyze a three month period of the Argentinian Media's Agenda composed a corpus of news' articles that were published between July 31th and November 5th in the section \emph{Politics} of the electronic editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}. On the other hand, \emph{Infobae} has the website with more visitors, above the websites of \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
+The corpus analyzed is constituted by 2908 politics articles of \emph{Clar\'in}, 3565 of \emph{La Naci\'on}, 3324 of \emph{P\'agina 12}, and 2018 of \emph{Infobae}. Except \emph{P\'agina 12}, all articles were taken from the section \emph{Pol\'itica}  (Politics) of the respective news portal, while the articles which belong to \emph{P\'agina 12} were taken from the section \emph{El pa\'is} (The country).
 
-\par The corpus analyzed is constituted by 2908 politics articles of \emph{Clariin}, 3565 of \emph{La Nacion}, 3324 of \emph{Pagina 12}, and 2018 of \emph{Infobae}. Except \emph{Pagina 12}, all articles were taken from the section \emph{Politica}  (Politics) of the respective news portal, while the articles which belong to \emph{Pagina 12} were taken from the section \emph{El pais} (The country).
-
-In order to perform the analysis of the articles in the corpus, we describe them as numerical vectors through the \textit{term frequency - inverse document frequency (tf-idf)} representation [CITA tf-idf]. Given the set of terms contained in the corpus' words after removing the non-informative ones, such as prepositions and conjunctions, the \textit{tf-idf} algorithm represents the \textit{i}-document as a vector $v_i = [x_{i1}, x_{i2}, ... , x_{it}]$, where the component $x_{ij}$ is computed by the equation \ref{ec:tfidf}, where $\textrm{tf}_{ij}$ is the number of times the \textit{j}-term appears in the \textit{i}-document, $d$ is the number of documents in the corpus, and $n_j$ is the number of documents where the \textit{j}-term appears. Each document's vector is normalized to unit Euclidean length. Once the documents' vector are constructed, we put them together in a document-term matrix (\emph{M}), which has dimensions of number of documents in the corpus ($d$) per number of terms selected ($t$).
+\par In order to perform the analysis of the articles in the corpus, we describe them as numerical vectors through the \textit{term frequency - inverse document frequency (tf-idf)} representation \cite{xu2003document}. Given the set of terms contained in the corpus' words after removing non-informative ones, such as prepositions and conjunctions, the \textit{tf-idf} algorithm represents the \textit{i}-document as a vector $v_i = [x_{i1}, x_{i2}, ... , x_{it}]$, where the component $x_{ij}$ is computed by the equation \ref{ec:tfidf}, where $\textrm{tf}_{ij}$ is the number of times the \textit{j}-term appears in the \textit{i}-document, $d$ is the number of documents in the corpus, and $n_j$ is the number of documents where the \textit{j}-term appears. Each document's vector is normalized to unit Euclidean length. Once the documents' vector are constructed, we put them together in a document-term matrix (\emph{M}), which has dimensions of number of documents in the corpus ($d$) per number of terms selected ($t$).
 
 % See parameters of sklearn.feature_extraction.text.TfidfVectorizer
-\begin{center}
 \begin{equation}
-\begin{split}
-\text{idf}_{j} & = 1 + \textrm{log}(\frac{1 + d}{1 + n_j}) \\
-x_{ij} = \textrm{tf}_{ij} \cdot \textrm{idf}_{j}
-\end{split}
+x_{ij} = \textrm{tf}_{ij} \cdot \textrm{idf}_{j} = \textrm{tf}_{ij} \cdot [1 + \textrm{log}(\frac{1 + d}{1 + n_j})] 
 \label{ec:tfidf}
 \end{equation}
-\end{center}
 
-Then we perform \emph{non-negative matrix factorization (NMF)} on the document-term matrix (\emph{M}) in order to detect the main topics in the corpus. A topic is a group of similar articles which roughly talks about the subject. 
-\emph{NMF} is an algorithm which factorize a matrix \emph{M} into two matrices \emph{W} and \emph{H} (eq.\ref{eq:nmf}), with the property that all three matrices have no negative elements. This non-negativity makes the resulting matrices easier to inspect, and very suitable for topic detection.
+\par We perform \emph{non-negative matrix factorization (NMF)} \cite{xu2003document, lee1999learning} on the document-term matrix (\emph{M}) in order to detect the main topics in the corpus. A topic is a group of similar articles which roughly talks about the same subject. 
+\emph{NMF} is an algorithm which factorize the matrix \emph{M} into two matrices \emph{W} and \emph{H} (eq.\ref{eq:nmf}), with the property that all three matrices have no negative elements. This non-negativity makes the resulting matrices easier to inspect, and very suitable for topic detection \footnote{ Even though there are other techniques in topic detection, as for instance LDA (Latent Dirichlet Allocation), the NMF decomposition suites perfect for the kind of corpus we  have analyzed in this work (A detailed comparison of both, NMF and LDA methods could be found in Supplementary Material)}. 
 \begin{equation}
 M^{(d \times t)} \sim H^{(d \times k)} \cdot W^{(k \times t)}
 \label{eq:nmf}
 \end{equation}
+Such as the resulting matrix \emph{H} has dimensions of number of documents per $k$ and matrix \emph{W} has dimensions of $k$ per number of terms, the number $k$ is therefore interpreted as the number of topics in the documents and it is a parameter that must be set before the factorization.
+\par The matrix \emph{H} is the representation of the documents in the topic-space. Each row is normalized to unit $l_1$-norm so that their components can be viewed as a degree of membership of a given document in the set of topics. In particular, the index of the largest component tells us which is the most representative topic of the document.
+On the other hand, \emph{W} gives the topics representation in the original term-space. The largest components of a row give the group of words which represent more accurately each topic (called keywords) and therefore an insight of what the topic is talking about.
+Since the factorization of eq.\ref{eq:nmf} usually can not be made exactly, it is approximated by minimizing the reconstruction error, i.e. the distance between matrix \emph{M} and its approximated form $\tilde{M} = H \cdot W$. This was performed \emph{NMF} through the python module \emph{scikit-learn} \cite{scikit-learn}.
 
-\par As can be seen in eq.\ref{eq:nmf}, the resulting matrix \emph{H} has dimensions of number of documents per $k$, and matrix \emph{W} has dimensions of $k$ per number of terms. The number $k$ is interpreted as the number of topics in the documents and it is a parameter that must be set before the factorization.
-
-  \par The matrix \emph{H} is interpreted as the representation of the documents in the topic-space, and the matrix \emph{W} as the topics represented in the original term-space. This factorization usually can not be made exactly so it is approximated by minimizing the reconstruction error, i.e. the distance between matrix \emph{M} and its approximated form $\tilde{M} = H \cdot W$. We performed \emph{NMF} through the python module \emph{scikit-learn} \cite{scikit-learn}.  \footnote{ Even though there are other technics in topic detection, as for instance LDA (Latent Dirichlet Allocation), the NMF decomposition suites perfect for the kind of corpus we  have analyzed in this work (A detailed comparison of both, NMF and LDA methods could be found in Supplementary Material)}. 
-
-\par The matrix $H$ obtained by \textit{NMF} gives the representation of the documents in the topic-space. If we normalize each document's vector to unit $l_1$-norm, their components can be viewed as a degree of membership of a given document in the set of topics. In particular, the index of the largest component tells us which is the most representative topic of the document.
-\par On the other hand, each row of matrix $W$ represent the topic in the term-space, i.e., the group of words which represent more accurately each topic (the keywords) and those who give an insight of what the topic is talking about.
-
-\par In order to have a time-dependent representation, we define the temporal profile of the topic $i$, $W_i(day)$ by the eq. \ref{eq:topic_weight} where $l(j)$ is the number of words of the document $j$, and $h_{ji}$ is the degree of membership of document $j$ on topic $i$. This definition allows all documents to contribute to any topic weight, providing by the fact that each document's vector can have non-zero components in more than one topic.
-\par As last steps of the data's preprocessing, we filter the topics' weight in order to reduce the noise but keeping the most details as possible, by redefining $W_i(day)$ as the mean value of a 3 days width window, centered on the day, as described in equation \ref{eq:topic_weight_norm}. 
-\par Finally we normalize again all the temporal profiles in order to describe each newspaper as distribution over the topics' space which evolves over time. This last normalization prevent us against the differences in the number of articles that each newspaper publishes.
+\par A time-dependent representation is obtained by defining the temporal profile of the topic $i$, $W_i(day)$, by eq.\ref{eq:topic_weight} where $l(j)$ is the number of words of the document $j$, and $h_{ji}$ is the degree of membership of document $j$ on topic $i$. Providing by the fact that each document's vector can have all non-zero components, it is allowed that a document contributes to more than one topics' weight.
+In order to reduce noise, we apply a linear filter with a sliding window of size 3, and finally we normalize the temporal profiles in order to describe each newspaper agenda as a distribution over the topics' space which evolves over time. This last normalization prevent us against the differences in the number of articles that each newspaper publishes.
 
 \begin{equation}
 W_i(day) = \sum_j^d l(j) \cdot h_{ji} \cdot \delta_{d,day}
 \label{eq:topic_weight}
 \end{equation}
 
-\begin{equation}
-\tilde{W}_i(day) = \frac{1}{3} ({W}_i(day) + {W}_i(day - 1) + W_i(day + 1))
-\label{eq:topic_weight_norm}
-\end{equation}
 
 \subsection{The Public and Twitter Agendas}
  
