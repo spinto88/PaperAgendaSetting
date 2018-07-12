@@ -74,7 +74,7 @@ Other interesting stage of agenda-setting concerns with the sources of media age
 
 \par Since the irruption of internet in our lives and the access to big data, there were many attempts to analyze from a quantitative point of view the theory of Agenda Setting based on  the original work of McCombs \cite{mccombs1972agenda}. Many of them follows what we called a "static approach", i.e., by summarizing certain issues present in news media and looking for effects in the audience \cite{brians1996campaign, gerber2009does, coleman2007young}.
 For instance, in Argentina, \cite{mitchelstein2016brecha} examines the difference between public and journalists preferences. 
-Several works by E. Zunino, like \cite{zunino2010cobertura} and \cite{koziner2013cobertura}, studied the coverage given by the main newspapers of particular events which have happened during the former administration of Argentinean president \emph{Cristina Fernandez de Kirchner} (from 2007 to 2015), where the government started to confront with news organizations that were critical to its management as they were an opposition party \cite{mitchelstein2017information}
+Several works by E. Zunino, like \cite{zunino2010cobertura} and \cite{koziner2013cobertura}, studied the coverage given by the main newspapers of particular events which have happened during the former administration of Argentinian president \emph{Cristina Fernandez de Kirchner} (from 2007 to 2015), where the government started to confront with news organizations that were critical to its management as they were an opposition party \cite{mitchelstein2017information}
 
 % Algo sobre bias
 \par Other line of research have been focused on detecting bias in the media, either by taking into account the number of mentions related  to a preferred political party \cite{lazaridou2016identifying, baumgartner2015all} or by identifying the ideology through the position of the media regards to certain issues or actors \cite{elejalde2018nature, sagarzazu2017hugo}. New trends in agenda-setting theory propose to represent ideological aspects or issues emphasized as networks like mind maps, and the basic idea is the comparison between media's knowledge representative network with its counterpart in the audience \cite{guo2012application, vu2014exploring}.
@@ -309,17 +309,17 @@ Discussions in Twitter about elections appear also in point (c), when the other 
 On the other hand, we focused in point (b), despite not being detected as a outlier, because it belong to the topic \emph{Missing person} and this date correspond to the rally that took place one month after the disappearance of Santiago Maldonado (see section \ref{sec:Context}). It is important to notice that the Shannon's Entropy of GT Agenda displays a minimum (collapsing agenda) not shown neither in the Media nor in the Twitter Agendas.
 We emphasize the discussion about this topic because we can appreciate  interesting facts that appear along the analysis.
 
+\par From the measure of $H$ we can also see that the median of the Public Agenda diversity is statistical significant lower than the Media Agenda's one.
+Specifically $H_{GT} = 0.73$ and $H_{Tw} = 0.74$ are statistical significant lower than $H_{MA} = 0.85$ with $p < 10^{-18}$, while there is no significant difference between the first two. 
+However from figure \ref{fig:shannon_entropy_agendas} we can see that \textbf{GT} shows more abrupt dropouts in the diversity in response to specific events.
+We conclude that its an important fact about audience behavior: given a finite set of topics, \textbf{the Public Agenda is less diverse than the Media Agenda}, because the public seems to focus more in the most important topic than the Media can do, maybe due to editorial decisions.
+
 \begin{figure}[H]
 \centering
 \includegraphics[height=0.75\textheight]{images/Fig3.pdf}
 \caption{\textbf{Shannon entropy (H) as a measure of agenda diversity.} The Public Agenda show a less diverse behavior than the Media Agenda as can be seen in the left figure. The horizontal lines are the lower inner fences of each signal in order to identify outliers. The related radar plots shows that those dates when the agenda has a low diversity, the most important topic catches the most public’s attention. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:shannon_entropy_agendas}
 \end{figure}
-
-\par From the measure of $H$ we can also see that the median of the Public Agenda diversity is statistical significant lower than the Media Agenda's one.
-Specifically $H_{GT} = 0.73$ and $H_{Tw} = 0.74$ are statistical significant lower than $H_{MA} = 0.85$ with $p < 10^{-18}$, while there is no significant difference between the first two. 
-However from figure \ref{fig:shannon_entropy_agendas} we can see that \textbf{GT} shows more abrupt dropouts in the diversity in response to specific events.
-We conclude that its an important fact about audience behavior: given a finite set of topics, \textbf{the Public Agenda is less diverse than the Media Agenda}, because the public seems to focus more in the most important topic than the Media can do, maybe due to editorial decisions.
 
 \subsubsection{Distance between Media and Public Agenda's }
 
@@ -351,14 +351,6 @@ We also show the radar plots showing the average distribution, as made in figure
 \par In figure \ref{fig:news_agenda} we can see in a qualitative way the slightly differences between the newspapers' agendas.
 For instance, we can see how newspaper called \emph{P\'agina 12} gave more importance to the topics \emph{Missing person} and \emph{Social leader}, while it reduces to minimum the coverage of the topic  \emph{Former Planning minister} as the others did.
 
-% Jensen shannon distance of Dynamic way
-\begin{figure}[H]
-\centering
-\includegraphics[width = \textwidth]{images/Fig5.pdf}
-\caption{\textbf{Bump charts of newspapers' Agenda and radar plot of the average distributions.} The figure shows, in a qualitative way, the bias in the different newspaper's agendas. For instance, the greater interest of \emph{P\'agina 12 (P12)} in the \emph{Missing person} topic and its slightly lower coverage in the \emph{Former Planning minister} respect to the other newspapers.}
-\label{fig:news_agenda}
-\end{figure}
-
 %\subsubsection{Independent behavior}
 
 \par In other to detect outliers behavior of a given newspaper respect to the others, we again calculate the Jensen-Shannon distance between the newspapers agenda and the Media Agenda.
@@ -368,6 +360,14 @@ We detect three points as outliers, although we discard the point \textbf{(b)} d
 The other two points corresponds to differences between \emph{P\'agina 12} and the other newspapers and correspond to differences in the coverage of the topic \emph{Missing person}.
 
 \par The point \textbf{(a)} corresponds  to the first news of the Santiago Maldonado's disappearance  reported by \emph{P\'agina 12} before the primary elections, and in point \textbf{(c)} to  the two months rally after the disappearance took place (see section \ref{sec:Context}). Another difference in point \textbf{(c)} corresponds to a greater coverage of \emph{P\'agina 12} in the topic \emph{Social leader} where the others media outlets seem to be more interested in the topic \emph{Former Vice-President}.
+
+% Jensen shannon distance of Dynamic way
+\begin{figure}[H]
+\centering
+\includegraphics[width = \textwidth]{images/Fig5.pdf}
+\caption{\textbf{Bump charts of newspapers' Agenda and radar plot of the average distributions.} The figure shows, in a qualitative way, the bias in the different newspaper's agendas. For instance, the greater interest of \emph{P\'agina 12 (P12)} in the \emph{Missing person} topic and its slightly lower coverage in the \emph{Former Planning minister} respect to the other newspapers.}
+\label{fig:news_agenda}
+\end{figure}
 
 % Jensen shannon distance of Dynamic way
 \begin{figure}[H]
@@ -457,6 +457,12 @@ On the other hand, the measurement of distances between Agendas can be employed 
 \section{Supplementary Material}
 \subsection{Context}
 \label{sec:Context}
+
+\par We provide here a more detailed explanation of the topics discussed among this work.
+The ideology of the media in Argentina expresses the highly polarized politic climate observe in Argentinian society.
+During the administration of \emph{Cristina Fern\'andez de Kirchner} (2007-2015), the government maintained a conflict with several news organizations.
+It led media such as \emph{Clar\'in}, \emph{La Naci\'on} and the portal news \emph{Infobae} to be very critics of the \emph{Fern\'andez}'s administration, emphasizing the allegations of corruption related to it as can be seen in the importance given to the topics \emph{Former Planning minister} and \emph{Former Vice-President}.
+On the other hand, \emph{P\'agina 12} has a opposite ideological inclination, supporting the former administration of \emph{Cristina Kirchner} and therefore being very critical with the current \emph{Maurico Macri}'s administration, doing special emphasis on issues related to human rights, as can be again observed in the coverage given to the topics \emph{Social leader} and \emph{Missing person}.
 
 \subsubsection{\emph{Elections}}
 \par Two legislative elections were celebrated during the period in great part of the Argentina: Primary elections on August 13th and the general elections on October 22th. 
