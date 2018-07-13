@@ -37,7 +37,7 @@
 \maketitle
 \begin{abstract}
 
-The mass media play a fundamental role in the formation of public opinion, either by defining the topics of discussion or by making a degree of emphasis on certain issues. Directly or indirectly, people get informed by consuming news from the media. But which is the dynamics of the agenda and how the people becomes interested in the different topics of the agenda? The Agenda Setting theory provides a conceptual framework in order to understand the role played by the mass media in public opinion formation, but the previous questions can not be answered without proper quantitative measures of agenda's dynamics and public attention. In this work we study the agenda of Argentinian newspapers in comparison with public’s interests through a quantitative approach by performing topic detection over the news, identifying the main topics covered and their evolution over time. We measure Agenda’s diversity as a function of time using Shannon’s entropy and difference between Agendas using Jensen-Shannon’s distance. We found that the Public Agenda is less diverse than the Media Agenda, and we are also capable to detect periods of time where coverage of certain issues are biased (coverage bias).\\
+The mass media play a fundamental role in the formation of public opinion, either by defining the topics of discussion or by making a degree of emphasis on certain issues. Directly or indirectly, people get informed by consuming news from the media. But which is the dynamics of the agenda and how the people become interested in the different topics of the agenda? The Agenda Setting theory provides a conceptual framework in order to understand the role played by the mass media in public opinion formation, but the previous questions can not be answered without proper quantitative measures of agenda's dynamics and public attention. In this work we study the agenda of Argentinian newspapers in comparison with public's interests through a quantitative approach by performing topic detection over the news, identifying the main topics covered and their evolution over time. We measure Agenda's diversity as a function of time using Shannon's entropy and difference between Agendas using Jensen-Shannon's distance. We found that the Public Agenda is less diverse than the Media Agenda, and we are also capable to detect periods of time where coverage of certain issues are biased (coverage bias).\\
 
 
 \end{abstract}
@@ -270,17 +270,17 @@ Discussions in Twitter about elections appear also in point (c), when the other 
 On the other hand, we focused in point (b), despite not being detected as a outlier, because it belong to the topic \emph{Missing person} and this date correspond to the rally that took place one month after the disappearance of Santiago Maldonado (see section \ref{sec:Context}). It is important to notice that the Shannon's Entropy of GT Agenda displays a minimum (collapsing agenda) not shown neither in the Media nor in the Twitter Agendas.
 We emphasize the discussion about this topic because we can appreciate  interesting facts that appear along the analysis.
 
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.7\textheight]{Fig3.pdf}
+\caption{\textbf{Shannon entropy (H) as a measure of agenda diversity.} The Public Agenda show a less diverse behavior than the Media Agenda as can be seen in the left figure. The horizontal lines are the lower inner fences of each signal in order to identify outliers. The related radar plots shows that those dates when the agenda has a low diversity, the most important topic catches the most public’s attention. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
+\label{fig:shannon_entropy_agendas}
+\end{figure}
+
 \par From the measure of $H$ we can also see that the median of the Public Agenda diversity is statistical significant lower than the Media Agenda's one.
 Specifically $H_{GT} = 0.73$ and $H_{Tw} = 0.74$ are statistical significant lower than $H_{MA} = 0.85$ with $p < 10^{-18}$, while there is no significant difference between the first two. 
 However from figure \ref{fig:shannon_entropy_agendas} we can see that \textbf{GT} shows more abrupt dropouts in the diversity in response to specific events.
 We conclude that its an important fact about audience behavior: given a finite set of topics, \textbf{the Public Agenda is less diverse than the Media Agenda}, because the public seems to focus more in the most important topic than the Media can do, maybe due to editorial decisions.
-
-\begin{figure}[H]
-\centering
-\includegraphics[height=0.75\textheight]{Fig3.pdf}
-\caption{\textbf{Shannon entropy (H) as a measure of agenda diversity.} The Public Agenda show a less diverse behavior than the Media Agenda as can be seen in the left figure. The horizontal lines are the lower inner fences of each signal in order to identify outliers. The related radar plots shows that those dates when the agenda has a low diversity, the most important topic catches the most public’s attention. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
-\label{fig:shannon_entropy_agendas}
-\end{figure}
 
 \subsubsection{Distance between Media and Public Agenda's }
 
@@ -296,7 +296,7 @@ However, the Jensen-Shannon distance, in conjunction with the measurement of the
  
 \begin{figure}[H]
 \centering
-\includegraphics[height = 0.75\textheight]{Fig4.pdf}
+\includegraphics[height = 0.7\textheight]{Fig4.pdf}
 \caption{\textbf{Jensen Shannon distance between the Media Agenda and the Public Agenda as a function of time} (with upper inner fences pointed out). The larger distances are due to a greater interest of the audience in the topic \emph{Missing person} which leads to lesser interest in the other topics, which the Media has to cover, maybe except in points (a) and (b) where the Media seems not to anticipate the public interest in the mentioned topic. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:jensen_shannon_gt}
 \end{figure}
