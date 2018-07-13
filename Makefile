@@ -1,8 +1,8 @@
 all:
-	pdflatex paper_balen.tex
-	bibtex paper_balen.aux
-	pdflatex paper_balen.tex
-	pdflatex paper_balen.tex
-	rm -rfv paper_balen.aux paper_balen.bbl paper_balen.log paper_balen.blg
+	pdflatex agenda_diversity.tex
+	bibtex agenda_diversity.aux
+	pdflatex agenda_diversity.tex
+	pdflatex agenda_diversity.tex
+	rm -rfv agenda_diversity.aux agenda_diversity.bbl agenda_diversity.log agenda_diversity.blg
 clean:
-	rm -rfv paper_balen.aux paper_balen.bbl paper_balen.log paper_balen.blg images/*eps-converted-to.pdf
+	rm -rfv agenda_diversity.aux agenda_diversity.bbl agenda_diversity.log agenda_diversity.blg images/*eps-converted-to.pdf
