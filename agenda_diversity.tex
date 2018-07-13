@@ -1,6 +1,7 @@
 \documentclass[a4paper, 12pt]{article}
 
 %\usepackage[utf8]{inputenc}
+\pdfoutput=1
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \usepackage{amsmath} 
@@ -181,7 +182,7 @@ Former Vice-President:  boudou + ciccone +  lijo + vandenbroele + carmona
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = \textwidth]{images/Fig1.pdf}
+\includegraphics[width = \textwidth]{Fig1.pdf}
 \caption{\textbf{Radar plots of the Media and Public Agendas represented by the ten topic distribution and their corresponding wordclouds.} The Public Agenda is represented either by Google Trends (GT) and Twitter (Tw). 
 Topics names are introduced together with the wordclouds containing the most important keywords involved in the definition of each topic. In green color we show the keywords used to define the topics in the Google Trends and Twitter queries (see table \ref{table:gt_queries}) and therefore in our construction of the Public Agenda.}
 \label{fig:topics_wordclouds}
@@ -189,7 +190,7 @@ Topics names are introduced together with the wordclouds containing the most imp
 
 
 \begin{figure}[H]
-\includegraphics[width = \textwidth]{images/Fig2.pdf}
+\includegraphics[width = \textwidth]{Fig2.pdf}
 \caption{\textbf{Bump graph of the Media Agenda (MA) and Public Agenda extracted from Google Trends (GT) and Twitter (Tw)}. The curves width and their ordering are related to the topics relative weight. Some important events related to the topics are pointed out:
 \textbf{A}: First news about Santiago Maldonado's disappearance;
 \textbf{B}: Primary elections;
@@ -276,7 +277,7 @@ We conclude that its an important fact about audience behavior: given a finite s
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.75\textheight]{images/Fig3.pdf}
+\includegraphics[height=0.75\textheight]{Fig3.pdf}
 \caption{\textbf{Shannon entropy (H) as a measure of agenda diversity.} The Public Agenda show a less diverse behavior than the Media Agenda as can be seen in the left figure. The horizontal lines are the lower inner fences of each signal in order to identify outliers. The related radar plots shows that those dates when the agenda has a low diversity, the most important topic catches the most public’s attention. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:shannon_entropy_agendas}
 \end{figure}
@@ -295,7 +296,7 @@ However, the Jensen-Shannon distance, in conjunction with the measurement of the
  
 \begin{figure}[H]
 \centering
-\includegraphics[height = 0.75\textheight]{images/Fig4.pdf}
+\includegraphics[height = 0.75\textheight]{Fig4.pdf}
 \caption{\textbf{Jensen Shannon distance between the Media Agenda and the Public Agenda as a function of time} (with upper inner fences pointed out). The larger distances are due to a greater interest of the audience in the topic \emph{Missing person} which leads to lesser interest in the other topics, which the Media has to cover, maybe except in points (a) and (b) where the Media seems not to anticipate the public interest in the mentioned topic. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:jensen_shannon_gt}
 \end{figure}
@@ -321,14 +322,14 @@ The other two points corresponds to differences between \emph{P\'agina 12} and t
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = \textwidth]{images/Fig5.pdf}
+\includegraphics[width = \textwidth]{Fig5.pdf}
 \caption{\textbf{Bump charts of newspapers' Agenda and radar plot of the average distributions.} The figure shows, in a qualitative way, the bias in the different newspaper's agendas. For instance, the greater interest of \emph{P\'agina 12 (P12)} in the \emph{Missing person} topic and its slightly lower coverage in the \emph{Former Planning minister} respect to the other newspapers.}
 \label{fig:news_agenda}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = \textwidth]{images/Fig6.pdf}
+\includegraphics[width = \textwidth]{Fig6.pdf}
 \caption{\textbf{Jensen-Shannon distance between the newspapers agenda and the Media Agenda as a function of time}. \emph{P\'agina 12} shows the more different behavior, motivated again by its interest in the \emph{Missing person} and \emph{Social leader} topics as can be seen in the radar plots which belongs to points (a) and (c). The anomalous behavior of \emph{Infobae} at pint (b) is due to few articles around that date in our database, therefore we ignore its radar plot. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:jensen_shannon_news}
 \end{figure}
@@ -338,7 +339,7 @@ The other two points corresponds to differences between \emph{P\'agina 12} and t
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = \textwidth]{images/Fig7.pdf}
+\includegraphics[width = \textwidth]{Fig7.pdf}
 \caption{\textbf{Relative weight of the topics (a) \emph{Missing person}, and (b) \emph{Former Planning Minister}, and their corresponding word-clouds of frequent newspapers' keywords}. We interpreted the differences shown in given periods as an indicator of coverage bias. For instance, in figure (a) \emph{P\'agina 12} pays a greater attention in the first days. In the word-clouds, we show which of the defining words are more frequently used by the corresponding newspaper. Most of them are less informative, but other seems to represent a first approximation in the study of framing.}
 \label{fig:topics_temporal_profiles}
 \end{figure}
@@ -385,7 +386,7 @@ With this work we aimed to provide a quantitative characterization of the behavi
 
 
 \begin{figure}[H]
-\includegraphics[width = \textwidth]{images/Fig8.pdf}
+\includegraphics[width = \textwidth]{Fig8.pdf}
 \caption{\textbf{Agenda setting direction in Missing person's topic?}
 The temporal profiles of figure (a) show that the Public and Media agenda seem to differentiate around August 15th (vertical grey line (1)) and the Public increase abruptly its interest in the topic around August 24th (grey line (2)). It can be seen also in figure (b), where the discrete differences were computed. 
 With the computing of the cumulative sum of figure \ref{fig:topics_temporal_profiles} and figure (a), represented as a bump chart in figure (c), we suggest that the topic was first set by \emph{P\'agina 12} and then the Public's interest cause the coverage of the other Media.
@@ -475,8 +476,8 @@ The same procedure is proposed in absence of an alternative topic model to which
  
 \begin{figure}[H]
 \centering
-\includegraphics[scale = 0.4]{images/FigA2.pdf}
-\includegraphics[scale = 0.4]{images/FigA1.pdf}
+\includegraphics[scale = 0.4]{FigA2.pdf}
+\includegraphics[scale = 0.4]{FigA1.pdf}
 \caption{Temporal profiles of topics \emph{Elections} (left) and \emph{Missing Person} (right) for both LDA and NMF. All the topics found by applying NMF have a highly correlated counterpart in LDA.} 
 \label{fig:temporal_profiles_nmf_lda}
 \end{figure}
@@ -500,6 +501,6 @@ Prosecutor's death & \textbf{0.83} \\
 \end{table}
 
 \newpage
-\bibliography{bibliography}
+\bibliography{agenda_diversity}
 
 \end{document}
