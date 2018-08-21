@@ -302,11 +302,11 @@ Such as the resulting matrix \emph{H} has dimensions of number of documents per 
 \par The matrix \emph{H} is the representation of the documents in the topic-space. Each row is normalized to unit $l_1$-norm so that their components can be viewed as a degree of membership of a given document in the set of topics. In particular, the index of the largest component tells us which is the most representative topic of the document.
 On the other hand, \emph{W} gives the topics representation in the original term-space. The largest components of a row give the group of words which represent more accurately each topic (called keywords) and therefore an insight of what the topic is talking about.
 Since the factorization of eq.\ref{eq:nmf} usually can not be made exactly, it is approximated by minimizing the reconstruction error, i.e. the distance between matrix \emph{M} and its approximated form $\tilde{M} = H \cdot W$. This was performed \emph{NMF} through the python module \emph{scikit-learn} \cite{scikit-learn}.
-\par A time-dependent representation is obtained by defining the temporal profile of the topic $i$, $W_i(day)$, by eq.\ref{eq:topic_weight} where $l(j)$ is the number of words of the document $j$, $h_{ji}$ is the degree of membership of document $j$ on topic $i$ and $\delta$ is the Kronecker delta. Providing by the fact that each document's vector can have all non-zero components, it is allowed that a document contributes to more than one topics' weight.
+\par A time-dependent representation is obtained by defining the temporal profile of the topic $i$, $W_i(day)$, by eq.\ref{eq:topic_weight} where $l(j)$ is the number of words of the document $j$, $h_{ji}$ is the degree of membership of document $j$ on topic $i$, $d_j$ is the date of document $j$, and $\delta$ is the Kronecker delta. Providing by the fact that each document's vector can have all non-zero components, it is allowed that a document contributes to more than one topics' weight.
 In order to reduce noise, we apply a linear filter with a sliding window of size 3, and finally we normalize the temporal profiles in order to describe each newspaper agenda as a distribution over the topics' space which evolves over time. This last normalization prevent us against the differences in the number of articles that each newspaper publishes.
 
 \begin{equation}
-W_i(day) = \sum_j^d l(j) \cdot h_{ji} \cdot \delta_{d,day}
+W_i(day) = \sum_j l(j) \cdot h_{ji} \cdot \delta_{d_j,day}
 \label{eq:topic_weight}
 \end{equation}
 
