@@ -47,7 +47,7 @@
 \documentclass{bmcart}
 
 %%% Load packages
-%\usepackage{amsthm,amsmath}
+\usepackage{amsthm,amsmath}
 %\RequirePackage{natbib}
 %\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
 %\RequirePackage{hyperref}
@@ -286,7 +286,8 @@ On the other hand, we aim to take an insight about Media dynamics and Public res
  \label{sec:MatMeth}
 
 \subsection*{The Media Agenda}
-\par In this work we analyze a three month period of the Argentinian Media's Agenda composed by a corpus of news' articles that were published between July 31th and November 5th of 2017 in the section \emph{Politics} of the online editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}. On the other hand, \emph{Infobae} has the most visited website, much more than \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
+\par In this work we analyze a three month period of the Argentinian Media's Agenda composed by a corpus of news' articles that were published between July 31th and November 5th of 2017. 
+The articles come from the \emph{Politics} section of the online editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}. On the other hand, \emph{Infobae} has the most visited website, much more than \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
 The corpus analyzed comprise by 2908 politics articles of \emph{Clar\'in}, 3565 of \emph{La Naci\'on}, 3324 of \emph{P\'agina 12}, and 2018 of \emph{Infobae}. Except \emph{P\'agina 12}, all articles were taken from the section \emph{Pol\'itica}  (Politics) of the respective news portal, while the articles which belong to \emph{P\'agina 12} were taken from the section \emph{El pa\'is} (The country).
 
 \par We describe them as numerical vectors through the \textit{term frequency - inverse document frequency (tf-idf)} representation \cite{xu2003document}. Given the set of terms contained in the corpus' words after removing non-informative ones, such as prepositions and conjunctions, the \textit{tf-idf} algorithm represents the \textit{i}-document as a vector $v_i = [x_{i1}, x_{i2}, ... , x_{it}]$, where the component $x_{ij}$ is computed by the equation \ref{ec:tfidf}, where $\textrm{tf}_{ij}$ is the number of times the \textit{j}-term appears in the \textit{i}-document, $d$ is the number of documents in the corpus, and $n_j$ is the number of documents where the \textit{j}-term appears. Each document's vector is normalized to unit Euclidean length. Once the documents' vector are constructed, we put them together in a document-term matrix (\emph{M}), which has dimensions of number of documents in the corpus ($d$) per number of terms selected ($t$).
@@ -307,7 +308,7 @@ Such as the resulting matrix \emph{H} has dimensions of number of documents per 
 On the other hand, \emph{W} gives the topics representation in the original term-space. The largest components of a row give the most representative words of each topic (called keywords) and therefore an insight of what the topic is talking about.
 Since the factorization of eq.(\ref{eq:nmf}) usually can not be made exactly, it is approximated by minimizing the reconstruction error, i.e. the distance between matrix \emph{M} and its approximated form $\tilde{M} = H \cdot W$. This was performed \emph{NMF} through the python module \emph{scikit-learn} \cite{scikit-learn}.
 
-\par Then  a  time-dependent Media Agenda is represented a a time evolving distribution of topics. The daily weight of the topic $i$, $W_i(day)$, is calculated following  eq.(\ref{eq:topic_weight}), where $l(j)$ is the number of words of the document $j$, $h_{ji}$ is the degree of membership of document $j$ on topic $i$, $d_j$ is the date of document $j$, and $\delta$ is the Kronecker delta. Providing by the fact that each document's vector can have all non-zero components, it is allowed that a document contributes to more than one topics' weight.
+\par Then a time-dependent Media Agenda is represented as a time evolving distribution of topics. The daily weight of the topic $i$, $W_i(day)$, is calculated following  eq.(\ref{eq:topic_weight}), where $l(j)$ is the number of words of the document $j$, $h_{ji}$ is the degree of membership of document $j$ on topic $i$, $d_j$ is the date of document $j$, and $\delta$ is the Kronecker delta. Providing by the fact that each document's vector can have all non-zero components, it is allowed that a document contributes to more than one topics' weight.
 In order to reduce noise, we apply a linear filter with a three day wide sliding window, and finally we normalize the temporal profiles in order to describe each newspaper agenda as a distribution over the topics' space which evolves over time. 
 %This last normalization prevent us against the differences in the number of articles that each newspaper publishes.
 
@@ -319,14 +320,15 @@ W_i(day) = \sum_j l(j) \cdot h_{ji} \cdot \delta_{d_j,day}
 \subsection*{The Google and Twitter Agendas}
  
 \par The other side of time-dependent Media Agenda is to have some measure of the public interest about these topics. With this goal, we use  \emph{Google Trends} and \emph{Twitter} as proxy of public interest by  looking for the same topics  in the same period of time. We take advantage of topics' keywords to make queries in the \emph{Google Trends}  tool and  into the advance search tool of Twitter  to get the relative weight searches and tweets in both platforms.
+\par In section \textbf{Results} we give a more detailed description of the keywords involved in the construction of the Google and Twitter Agendas. 
 
 \subsection*{Normalized Shannon's H Information Entropy}
 
 \par One of the key of our work is the representation of the Agendas as time evolving topic distributions, and the association between the different measures that we can derive from them with the social events observed during the period.
-The first measure we emphasize is the concept of \emph{diversity of the attention}, while the distance between Agendas will be developed in the next section.
-Following \cite{boydstun2014importance} the \emph{diversity} is a very important variable that must be taken into account when dealing with multiple issues as it tells us how the attention is distributed across the different topics of discussion. In that work, their also propose the use of the normalized Shannon's entropy as a way to quantify the diversity which we found very suitable for our framework.
-\par The normalized Shannon's entropy $H[p]$ referred in eq.(\ref{eq:shannon_entropy}) give us a measure of how spread is a distribution, taking the maximum value of $1$ where all outcomes are equally probable in the case of a discrete distribution, and $0$ where one of the outcomes is the only possible one. 
-This last case will be of particular interest for us because it tells about a topic which absorbs all the attention either from the Media or the Public, while the former shows an absolutely unbiased interest towards any of the topics.
+In order to do that, the first measure we emphasize is the concept of \emph{diversity of the attention}.
+Following \cite{boydstun2014importance} the \emph{diversity} is a very important variable that must be taken into account when dealing with multiple issues, due to the fact that it tells us how the attention is distributed across the different topics of discussion. In that work, their also propose the use of the normalized Shannon's entropy as a way to quantify the diversity, which can be easily calculated and therefore is a very suitable quantity within our framework.
+\par The normalized Shannon's entropy $H[p]$ referred in eq.(\ref{eq:shannon_entropy}) give us a measure of how spread is a -discrete- distribution, taking the maximum value of $1$ when all outcomes are equally probable, and $0$ when there is just one possible outcome. 
+This last case -or approximated ones- will be of particular interest for us because it tells about a topic which absorbs all the attention either from the Media or the Public, while the former shows an absolutely unbiased interest towards any of the topics.
 
 \begin{equation}
 H[p] = \frac{- \sum_{i = 1}^{N} p(x_i) * ln(p(x_i))}{ln(N)}
@@ -335,42 +337,34 @@ H[p] = \frac{- \sum_{i = 1}^{N} p(x_i) * ln(p(x_i))}{ln(N)}
 
 \subsection*{Jensen-Shannon distance}
 
-\par While the diversity is a property of each individual distribution, a natural question that arise when comparing different distributions is how far or close are among them.
-Therefore a measure of distances between distributions is necessary. 
-We proposed here the use of the Jensen-Shannon distance ($JSD$) which 
-
-DESAROLLAR LA EXPLICACION DE LA DISTANCIA DE JS Y HABLAR SOBRE LAS CONSECUENCIAS DE QUE LAS DISTRIBUCIONES ESTEN CERCA O LEJOS, EN PARTICULAR LA AGENDA PUBLICA DE LA MEDIATICA.
-
-can be seen as a property a In probability theory and statistics, the Jensen-Shannon divergence ($JS_{Div}$) is a method to measure the similarity between two probability distributions. It is based on the Kullback-Leibler divergence ($D_{KL}$) with interesting properties such as it is symmetric and it is always a finite value. The square root of the Jensen-Shannon divergence (see eq.\ref{eq:jensen_shannon_distance} is a metric \cite{fuglede2004jensen} often referred as Jensen-Shannon distance ($JSD$).
-The measure of the distances between distributions will tell us  
+\par While the diversity is a property of each distribution, a natural question that arise when comparing different distributions is how similar they are. We will be for instance particularly interested in measuring the similarity between the Media and Public Agendas, because those dates when the similarity is low tell us about distant interests of the Media and the Public.
+We proposed here to measure the similarity between distributions by the use of the Jensen-Shannon distance ($JSD$). 
+When the similarity of the distributions is low, the distance between them is high.
+\par The Jensen-Shannon distance ($JSD$) is a metric between distributions based on the Jensen-Shannon divergence ($JS_{Div}$) \cite{fuglede2004jensen}, which is in turn a symmetric version of the well-known Kullback-Leibler divergence ($D_{KL}$). 
+We recall that the $JSD$ has the advantage of being symmetric and also a well-defined distance, which make it conceptually easy to deal.
+As can be seen in eq.(\ref{eq:jensen_shannon_distance}) the $JSD$ between the distributions $P$ and $Q$ is simply the square root of the Jensen-Shannon divergence.
 
 \begin{eqnarray}\label{eq:jensen_shannon_distance}
 D_{KL}(P||Q) &= -\sum{P(i) log(\frac{Q(i)}{P(i)})} \nonumber \\
 JSD(P,Q) &= \sqrt{JS_{Div}(P,Q)} = \sqrt{\frac{1}{2}[D_{KL}(P||M) + D_{KL}(Q||M)] } 
 \end{eqnarray}
 
-where $M = \frac{P + Q}{2}$). In Section \ref{results} we will use Jensen-Shannon distance to measure differences between agendas.
-
 \subsection*{Outliers identification}
 
-DADAS LAS MEDIDAS DEFINIDAS ANTERIORMENTE QUEREMOS TENER UN CRITERIO PARA DECIR CUANDO UN PUNTO ES POCO DIVERSO O CUANDO UN PUNTO ESTA ALEJADO.
-MENCIONAR QUE ESTA MEDIDA ES SUGESTIVA POR LO QUE NO NOS BASAMOS ESTRICAMENTE SINO QUE SIMPLEMENTE LOS TOMAMOS COMO UN CRITERIO PARA VER A QUE PUNTOS VAMOS A PRESTARLES MAYOR ATENCION
-
-
-\label{sec:outliers_identification}
-\par One of the key aspects in our analysis is to identify outliers in distances between agendas. We identify outliers values in a data set of N observations by following the box plot construction.
-Four fences are defined based on a quartile division of the distribution, according to 
-The quantities (called fences) in \ref{eq:fences} are used, where $Q1$ is the lower quartile (range of the distribution where lies the 25th percent of the data), $Q3$ is the upper quartile (where lies the 75th percent of the data) and $IQ = Q3 - Q1$.
-
+\par As was mentioned above, once defined the concepts of diversity and distance between distributions, we will be particularly interested in those dates when these concepts take extreme values: When the diversity is low, we know that a topic is absorbing much of the attention of any of the Agendas; on the other hand, when the distance between two distributions is high, we can conclude that they have distant interests.
+However, we still lack the definition of what a low diversity or a high distance are. 
+We face this problem by treating the measures of each observable as random samples from a population with unknown distribution and identifying those extreme values as outliers of the distribution. 
+In order to detect these outliers we follow the popular box-plot construction proposed by Tukey \cite{tukey1977exploratory}, which is a simple data-driven method and make no assumption about the distribution of the data.
+\par The box-plot construction is as follows: First a quartile division of the $N$ observations is made, by naming $Q1$ as the lower quartile, $Q2$ the median of the distribution, and $Q3$ the upper quartile. Recall that $Q1$ ($Q3$) are defined to be the division where the 25th (75th) percent of the observations lies below (by definition, the median $Q2$ separates the distribution in two equal parts). On the other hand, the inter-quartile range $IQ$ is defined as $IQ = Q3 - Q1$. This is the range where the bulk of the data lies inside.
+\par We are not interesting in the visualization of the box-plot in its own but instead in its procedure to identify outliers. Therefore from the quartiles, new quantities called \emph{fences} are defined in eq.(\ref{eq:fences}). In this equation, $LIF$ stands for \emph{lower inner fence}, $UIF$ for \emph{upper inner fence}, $LOF$ for \emph{lower outer fence} and $UOF$ for \emph{upper outer fence}. The fences can be interpreted as the limits of the distribution.
+We then have all the ingredients to label a point as an outlier: A point which lies above the upper inner fence is considered a \emph{mild outlier}, while a point that lies above the upper outer fence is considered an \emph{extreme outlier}. The same holds for the lower fences, i.e. if a point lies below the lower inner (outer) fences is considered as a mild (extreme) outlier \cite{natrella2010nist}. 
 \begin{eqnarray}\label{eq:fences}
 LIF & = Q1 - 1.5 IQ \nonumber \\
-UIF & = Q3 + 1.5  IQ \nonumber\\
-LOF & = Q1 - 3  IQ \nonumber \\
+UIF & = Q3 + 1.5 IQ \nonumber\\
+LOF & = Q1 - 3 IQ \nonumber \\
 UOF & = Q3 + 3 IQ
 \end{eqnarray}
-
-\par where $LIF$ stands for lower inner fence, $UIF$ for upper inner fence, $LOF$ for lower outer fence and $UOF$ for upper outer fence. A point above the upper inner fence considered a mild outlier and a point above an outer fence is considered an extreme outlier. The same holds for the lower fences \cite{natrella2010nist}. 
-
+\par We will indicate the proper fences in each figure either when the diversity or the distance is being analyzed. We will paid attention not only to those values labeled as outliers, but also to those that are next to any of the fences despite not being strictly defined as that.
 
 \section*{Results}
 \label{results}
