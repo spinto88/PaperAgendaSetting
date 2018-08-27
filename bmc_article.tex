@@ -72,8 +72,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\def\includegraphic{}
-\def\includegraphics{}
+%\def\includegraphic{}
+%\def\includegraphics{}
+\usepackage{graphicx}
 
 
 
@@ -190,7 +191,7 @@
 
 \begin{abstract} % abstract
 
-The mass media play a fundamental role in the formation of public opinion, either by defining the topics of discussion or by making a degree of emphasis on certain issues. Directly or indirectly, people get informed by consuming news from the media. But which is the dynamics of the agenda and how the people become interested in the different topics of the agenda? The Agenda Setting theory provides a conceptual framework in order to understand the role played by the mass media in public opinion formation, but the previous questions can not be answered without proper quantitative measures of agenda's dynamics and public attention. In this work we study the agenda of Argentinian newspapers in comparison with public's interests through a quantitative approach by performing topic detection over the news, identifying the main topics covered and their evolution over time. We measure Agenda's diversity as a function of time using Shannon's entropy and difference between Agendas using Jensen-Shannon's distance. We found that the Public Agenda is less diverse than the Media Agenda, and we are also capable to detect periods of time where coverage of certain issues are biased (coverage bias).\\
+The mass media play a fundamental role in the formation of public opinion, either by defining the topics of discussion or by making a degree of emphasis on certain issues. Directly or indirectly, people get informed by consuming news from the media. But which is the dynamics of the agenda and how the people become interested in their different topics? The Agenda Setting theory provides a conceptual framework in order to understand the role played by the mass media in public opinion formation, but the previous questions can not be answered without proper quantitative measures of agenda's dynamics and public attention. In this work we study the agenda of Argentinian newspapers in comparison with public interests through a quantitative approach by performing topic detection over the news, identifying the main topics covered and their evolution over time. We measure Agenda's diversity as a function of time using Shannon's entropy and differences between Agendas using Jensen-Shannon's distance. We found that the Public Agenda is less diverse than the Media Agenda, and we were also capable to detect periods of time where coverage of certain issues are biased (coverage bias).\\
 
 \end{abstract}
 
@@ -204,9 +205,9 @@ The mass media play a fundamental role in the formation of public opinion, eithe
 
 \begin{keyword}
 \kwd{agenda-setting}
-\kwd{agenda diversity}
-\kwd{coverage bias}
-\kwd{topic modelling}
+\kwd{opinion formation}
+\kwd{topic detection}
+\kwd{Mass Media influence}
 \end{keyword}
 
 % MSC classifications codes, if any
@@ -251,21 +252,23 @@ The mass media play a fundamental role in the formation of public opinion, eithe
 
 \section*{Introduction}
 
-\subsection*{Agenda Setting Theory}
+%\subsection*{Agenda Setting Theory}
 
-\par To understand the ecosystem of information flow and opinion formation is one of the goals in these days. In this framework, many ingredients can be part of different mechanism of social influence. A major role in this ecosystem is played by the Mass Media outlets, which used to be the source of information of many of us.  Informed people tends to interact with each other, either via personal interactions or through social networks. In this scenario, becomes essential to understand the role of Mass Media Influence in a given social group.
+\par The understanding of  the ecosystem of information flow and opinion formation is one of the challenges in  complex social system research. Within this framework, many ingredients can be part of different mechanism of social influence. A major role in this ecosystem is played by the Mass Media outlets, which use to be the source of information of many people.  Then, informed people tends to interact with each other, either via personal interactions or through social networks, giving rise to complex dynamics where opinions are shaping and changing in time. In this scenario, becomes essential to understand the role of Mass Media Influence in a given social group.
 \par  This question has been raised years ago. In the famous study performed in Chapel Hill during the US presidential elections in 1968 \cite{mccombs1972agenda}, Maxwell McCombs and Donald Shaw found that those aspects of public affairs that are prominent in the news become prominent among the public.
 This study is considered the founding of the agenda-setting theory, which focus in the influence of mass media in public opinion.  
 From \cite{mccombs2014agenda}, \textit{``The media agenda is the pattern of news coverage over a period of days, weeks (...) for a set of issues or other topic. In other words, the media agenda is a systematic compilation of the issues or topics presented to the public that identifies the degree of emphasis on these topics''}. 
-\par In its basic stage, the theory focus on the comparison between the topics coverage by the media and the public agenda, i.e. the topics that the public consider as priority.
+\par In its first-level stage, the theory focus on the comparison between the topics coverage by the media and the public agenda, i.e. the topics that the public consider as priority.
 It looks for answering the question if the media is able to set the public agenda, which would transform the media as an important actor in the formation of public opinion. 
 This stage is sometimes called the ``first level agenda-setting''.  The very often quoted phrase of Bernard C. Cohen \textit{``The press may not be successful much of the time in telling people what to think, but it is stunningly successful in telling its readers what to think about.''} illustrates its object of study. With the emergency of the Internet, the end of agenda-setting were predicted due to the audience fragmentation onto multiple sources, which would virtually lead to a highly individualized agenda. However, it is based on two assumptions that are not necessarily true: the public spreads its attention in an homogeneous way across the multiple sources, and that the agendas of that sources are different \cite{mccombs2005look}.
+
 \par From the Chapel Hill research, several directions of agenda-setting were established \cite{mccombs2005look}.
-The ``second level agenda-setting'', sometimes called \textit{attribute agenda-setting}, studies the \textit{objects} (in a social psychology way, where an \textit{attitude object} designate a thing that an individual has an attitude or opinion about) present in the media agenda. When the media talks about an object some attributes are emphasized, and others not. 
+The ``second level agenda-setting'', sometimes called \textit{attribute agenda-setting}, studies the \textit{objects} (in a social psychology sense, where an \textit{attitude object} designate a thing that an individual has an attitude or opinion about) present in the media agenda. When the media talks about an object some attributes are emphasized, and others not. 
 This theory is linked with \textit{framing} \cite{guggenheim2015dynamics, tsur2015frame}. 
 To frame is to \textit{select some aspects of a perceived reality and make them more salient in a communicating text, in such a way as to promote a particular problem definition, causal interpretation, moral evaluation and/or treatment recommendation} (Robert Entman) \cite{mccombs2005look}.
 This stage of agenda-setting theory can be summary in the phrase \textit{``the media not only can be successful in telling us what to think about, they also can be successful in telling us how to think about it.''} 
 Other interesting stage of agenda-setting concerns with the sources of media agenda, i.e. if the media set the public agenda, \textit{who sets the agenda media?} Within this framework, \textit{intermedia agenda-setting} observes the competition between different media and how they influence each other. The competition between mass media for the same audience can lead to a homogenization of the agendas \cite{vargo2017networks}, which is in the opposite direction of one of the assumptions that predict the end of agenda-setting, as was mentioned before.
+
 \par Since the irruption of internet in our lives and the access to big data, there were many attempts to analyze from a quantitative point of view the theory of Agenda Setting based on  the original work of McCombs \cite{mccombs1972agenda}. Many of them follows what we called a ``static approach", i.e. by summarizing certain issues present in news media and looking for effects in the audience \cite{brians1996campaign, gerber2009does, coleman2007young}.
 For instance, in Argentina, \cite{mitchelstein2016brecha} examines the difference between public and journalists preferences. 
 Several works by E. Zunino, like \cite{zunino2010cobertura} and \cite{koziner2013cobertura}, studied the coverage given by the main newspapers of particular events which have happened during the former administration of Argentinian president \emph{Cristina Fern\'andez de Kirchner} (from 2007 to 2015), where the government started to confront with news organizations that were critical to its management as they were an opposition party \cite{mitchelstein2017information}.
@@ -283,9 +286,10 @@ On the other hand, we aim to take an insight about Media dynamics and Public res
  \label{sec:MatMeth}
 
 \subsection*{The Media Agenda}
-\par In this work we analyze a three month period of the Argentinian Media's Agenda composed a corpus of news' articles that were published between July 31th and November 5th in the section \emph{Politics} of the electronic editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}. On the other hand, \emph{Infobae} has the website with more visitors, above the websites of \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
-The corpus analyzed is constituted by 2908 politics articles of \emph{Clar\'in}, 3565 of \emph{La Naci\'on}, 3324 of \emph{P\'agina 12}, and 2018 of \emph{Infobae}. Except \emph{P\'agina 12}, all articles were taken from the section \emph{Pol\'itica}  (Politics) of the respective news portal, while the articles which belong to \emph{P\'agina 12} were taken from the section \emph{El pa\'is} (The country).
-\par In order to perform the analysis of the articles in the corpus, we describe them as numerical vectors through the \textit{term frequency - inverse document frequency (tf-idf)} representation \cite{xu2003document}. Given the set of terms contained in the corpus' words after removing non-informative ones, such as prepositions and conjunctions, the \textit{tf-idf} algorithm represents the \textit{i}-document as a vector $v_i = [x_{i1}, x_{i2}, ... , x_{it}]$, where the component $x_{ij}$ is computed by the equation \ref{ec:tfidf}, where $\textrm{tf}_{ij}$ is the number of times the \textit{j}-term appears in the \textit{i}-document, $d$ is the number of documents in the corpus, and $n_j$ is the number of documents where the \textit{j}-term appears. Each document's vector is normalized to unit Euclidean length. Once the documents' vector are constructed, we put them together in a document-term matrix (\emph{M}), which has dimensions of number of documents in the corpus ($d$) per number of terms selected ($t$).
+\par In this work we analyze a three month period of the Argentinian Media's Agenda composed by a corpus of news' articles that were published between July 31th and November 5th of 2017 in the section \emph{Politics} of the online editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}. On the other hand, \emph{Infobae} has the most visited website, much more than \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
+The corpus analyzed comprise by 2908 politics articles of \emph{Clar\'in}, 3565 of \emph{La Naci\'on}, 3324 of \emph{P\'agina 12}, and 2018 of \emph{Infobae}. Except \emph{P\'agina 12}, all articles were taken from the section \emph{Pol\'itica}  (Politics) of the respective news portal, while the articles which belong to \emph{P\'agina 12} were taken from the section \emph{El pa\'is} (The country).
+
+\par We describe them as numerical vectors through the \textit{term frequency - inverse document frequency (tf-idf)} representation \cite{xu2003document}. Given the set of terms contained in the corpus' words after removing non-informative ones, such as prepositions and conjunctions, the \textit{tf-idf} algorithm represents the \textit{i}-document as a vector $v_i = [x_{i1}, x_{i2}, ... , x_{it}]$, where the component $x_{ij}$ is computed by the equation \ref{ec:tfidf}, where $\textrm{tf}_{ij}$ is the number of times the \textit{j}-term appears in the \textit{i}-document, $d$ is the number of documents in the corpus, and $n_j$ is the number of documents where the \textit{j}-term appears. Each document's vector is normalized to unit Euclidean length. Once the documents' vector are constructed, we put them together in a document-term matrix (\emph{M}), which has dimensions of number of documents in the corpus ($d$) per number of terms selected ($t$).
 
 \begin{equation}
 x_{ij} = \textrm{tf}_{ij} \cdot \textrm{idf}_{j} = \textrm{tf}_{ij} \cdot [1 + \textrm{log}(\frac{1 + d}{1 + n_j})] 
@@ -300,10 +304,12 @@ M^{(d \times t)} \sim H^{(d \times k)} \cdot W^{(k \times t)}
 \end{equation}
 Such as the resulting matrix \emph{H} has dimensions of number of documents per $k$ and matrix \emph{W} has dimensions of $k$ per number of terms, the number $k$ is therefore interpreted as the number of topics in the documents and it is a parameter that must be set before the factorization.
 \par The matrix \emph{H} is the representation of the documents in the topic-space. Each row is normalized to unit $l_1$-norm so that their components can be viewed as a degree of membership of a given document in the set of topics. In particular, the index of the largest component tells us which is the most representative topic of the document.
-On the other hand, \emph{W} gives the topics representation in the original term-space. The largest components of a row give the group of words which represent more accurately each topic (called keywords) and therefore an insight of what the topic is talking about.
-Since the factorization of eq.\ref{eq:nmf} usually can not be made exactly, it is approximated by minimizing the reconstruction error, i.e. the distance between matrix \emph{M} and its approximated form $\tilde{M} = H \cdot W$. This was performed \emph{NMF} through the python module \emph{scikit-learn} \cite{scikit-learn}.
-\par A time-dependent representation is obtained by defining the temporal profile of the topic $i$, $W_i(day)$, by eq.\ref{eq:topic_weight} where $l(j)$ is the number of words of the document $j$, $h_{ji}$ is the degree of membership of document $j$ on topic $i$, $d_j$ is the date of document $j$, and $\delta$ is the Kronecker delta. Providing by the fact that each document's vector can have all non-zero components, it is allowed that a document contributes to more than one topics' weight.
-In order to reduce noise, we apply a linear filter with a sliding window of size 3, and finally we normalize the temporal profiles in order to describe each newspaper agenda as a distribution over the topics' space which evolves over time. This last normalization prevent us against the differences in the number of articles that each newspaper publishes.
+On the other hand, \emph{W} gives the topics representation in the original term-space. The largest components of a row give the most representative words of each topic (called keywords) and therefore an insight of what the topic is talking about.
+Since the factorization of eq.(\ref{eq:nmf}) usually can not be made exactly, it is approximated by minimizing the reconstruction error, i.e. the distance between matrix \emph{M} and its approximated form $\tilde{M} = H \cdot W$. This was performed \emph{NMF} through the python module \emph{scikit-learn} \cite{scikit-learn}.
+
+\par Then  a  time-dependent Media Agenda is represented a a time evolving distribution of topics. The daily weight of the topic $i$, $W_i(day)$, is calculated following  eq.(\ref{eq:topic_weight}), where $l(j)$ is the number of words of the document $j$, $h_{ji}$ is the degree of membership of document $j$ on topic $i$, $d_j$ is the date of document $j$, and $\delta$ is the Kronecker delta. Providing by the fact that each document's vector can have all non-zero components, it is allowed that a document contributes to more than one topics' weight.
+In order to reduce noise, we apply a linear filter with a three day wide sliding window, and finally we normalize the temporal profiles in order to describe each newspaper agenda as a distribution over the topics' space which evolves over time. 
+%This last normalization prevent us against the differences in the number of articles that each newspaper publishes.
 
 \begin{equation}
 W_i(day) = \sum_j l(j) \cdot h_{ji} \cdot \delta_{d_j,day}
@@ -312,48 +318,69 @@ W_i(day) = \sum_j l(j) \cdot h_{ji} \cdot \delta_{d_j,day}
 
 \subsection*{The Google and Twitter Agendas}
  
-\par In order to have a proxy about how the Media Agenda is reaching the public, we look for the same topics in \emph{Google} and \emph{Twitter} in the same period of time. We take advantage of topics' keywords on the one hand by making queries to the \emph{Google Trends} tool and getting the relative weight of Google searches that people made about the identified topics, and in the other hand, by making queries to the advance search tool in the social media Twitter in order to get the relative amount of related tweets. 
-
-\subsection*{Outliers identification}
-\label{sec:outliers_identification}
-\par We identify outliers values in a data set of N observations by following the box plot construction. The quantities (called fences) in \ref{eq:fences} are used, where $Q1$ is the lower quartile (range of the distribution where lies the 25th percent of the data), $Q3$ is the upper quartile (where lies the 75th percent of the data) and $IQ = Q3 - Q1$.
-
-\begin{eqnarray}\label{eq:fences}
-lower inner fence (LIF) & = Q1 - 1.5 IQ \\
-upper inner fence (UIF) & = Q3 + 1.5  IQ \\
-lower outer fence (LOF) & = Q1 - 3  IQ \\
-upper outer fence (UOF) & = Q3 + 3 IQ
-\end{eqnarray}
-
-\par A point above the upper inner fence considered a mild outlier and a point above an outer fence is considered an extreme outlier. The same holds for the lower fences \cite{natrella2010nist}. 
-
-\subsection*{Jensen-Shannon distance}
-
-\par In probability theory and statistics, the Jensen-Shannon divergence ($JS_{Div}$) is a method to measure the similarity between two probability distributions. It is based on the Kullback-Leibler divergence ($D_{KL}$), but have also useful properties such as it is symmetric and it is always a finite value. The square root of the Jensen-Shannon divergence (see eq.\ref{eq:jensen_shannon_distance}, where $M = \frac{P + Q}{2}$) is a metric \cite{fuglede2004jensen} often referred as Jensen-Shannon distance ($JSD$).
-\begin{eqnarray}\label{eq:jensen_shannon_distance}
-D_{KL}(P||Q) = -\sum{P(i) log(\frac{Q(i)}{P(i)})} \\
-JSD(P,Q) = \sqrt{JS_{Div}(P,Q)} = \sqrt{\frac{1}{2}[D_{KL}(P||M) + D_{KL}(Q||M)] } 
-\end{eqnarray}
+\par The other side of time-dependent Media Agenda is to have some measure of the public interest about these topics. With this goal, we use  \emph{Google Trends} and \emph{Twitter} as proxy of public interest by  looking for the same topics  in the same period of time. We take advantage of topics' keywords to make queries in the \emph{Google Trends}  tool and  into the advance search tool of Twitter  to get the relative weight searches and tweets in both platforms.
 
 \subsection*{Normalized Shannon's H Information Entropy}
 
-\par The normalized Shannon's entropy (eq.\ref{eq:shannon_entropy}) is a way to measure how spread is a distribution, taking the maximum value where all outcomes are equally probable in the case of a discrete distribution.
+\par One of the key of our work is the representation of the Agendas as time evolving topic distributions, and the association between the different measures that we can derive from them with the social events observed during the period.
+The first measure we emphasize is the concept of \emph{diversity of the attention}, while the distance between Agendas will be developed in the next section.
+Following \cite{boydstun2014importance} the \emph{diversity} is a very important variable that must be taken into account when dealing with multiple issues as it tells us how the attention is distributed across the different topics of discussion. In that work, their also propose the use of the normalized Shannon's entropy as a way to quantify the diversity which we found very suitable for our framework.
+\par The normalized Shannon's entropy $H[p]$ referred in eq.(\ref{eq:shannon_entropy}) give us a measure of how spread is a distribution, taking the maximum value of $1$ where all outcomes are equally probable in the case of a discrete distribution, and $0$ where one of the outcomes is the only possible one. 
+This last case will be of particular interest for us because it tells about a topic which absorbs all the attention either from the Media or the Public, while the former shows an absolutely unbiased interest towards any of the topics.
 
 \begin{equation}
 H[p] = \frac{- \sum_{i = 1}^{N} p(x_i) * ln(p(x_i))}{ln(N)}
 \label{eq:shannon_entropy}
 \end{equation}
 
-\section*{Results}
+\subsection*{Jensen-Shannon distance}
 
-\par The starting point of our analysis is the decomposition of the corpus in ten topics. This is an arbitrary decision, validated in some manner by our knowledge of the corpus, which could be revised in future works.  From the initial ten topics, three of them could be interpreted as part of the same macro-topic called \emph{Elections}. The same happen with two others which we classified as part of the macro-topic called \emph{Missing person}, leaving the  final description of the agendas as made with seven topics. The meaning of the topics or macro-topics is contextualized in section \ref{sec:Context} of Supplementary Material. 
-\par After the procedure described in the previous section, we construct the \textbf{Media Agenda (MA)} and the \textbf{Public Agenda (PA)}, and all their derivations, as time-dependent distributions. 
+\par While the diversity is a property of each individual distribution, a natural question that arise when comparing different distributions is how far or close are among them.
+Therefore a measure of distances between distributions is necessary. 
+We proposed here the use of the Jensen-Shannon distance ($JSD$) which 
+
+DESAROLLAR LA EXPLICACION DE LA DISTANCIA DE JS Y HABLAR SOBRE LAS CONSECUENCIAS DE QUE LAS DISTRIBUCIONES ESTEN CERCA O LEJOS, EN PARTICULAR LA AGENDA PUBLICA DE LA MEDIATICA.
+
+can be seen as a property a In probability theory and statistics, the Jensen-Shannon divergence ($JS_{Div}$) is a method to measure the similarity between two probability distributions. It is based on the Kullback-Leibler divergence ($D_{KL}$) with interesting properties such as it is symmetric and it is always a finite value. The square root of the Jensen-Shannon divergence (see eq.\ref{eq:jensen_shannon_distance} is a metric \cite{fuglede2004jensen} often referred as Jensen-Shannon distance ($JSD$).
+The measure of the distances between distributions will tell us  
+
+\begin{eqnarray}\label{eq:jensen_shannon_distance}
+D_{KL}(P||Q) &= -\sum{P(i) log(\frac{Q(i)}{P(i)})} \nonumber \\
+JSD(P,Q) &= \sqrt{JS_{Div}(P,Q)} = \sqrt{\frac{1}{2}[D_{KL}(P||M) + D_{KL}(Q||M)] } 
+\end{eqnarray}
+
+where $M = \frac{P + Q}{2}$). In Section \ref{results} we will use Jensen-Shannon distance to measure differences between agendas.
+
+\subsection*{Outliers identification}
+
+DADAS LAS MEDIDAS DEFINIDAS ANTERIORMENTE QUEREMOS TENER UN CRITERIO PARA DECIR CUANDO UN PUNTO ES POCO DIVERSO O CUANDO UN PUNTO ESTA ALEJADO.
+MENCIONAR QUE ESTA MEDIDA ES SUGESTIVA POR LO QUE NO NOS BASAMOS ESTRICAMENTE SINO QUE SIMPLEMENTE LOS TOMAMOS COMO UN CRITERIO PARA VER A QUE PUNTOS VAMOS A PRESTARLES MAYOR ATENCION
+
+
+\label{sec:outliers_identification}
+\par One of the key aspects in our analysis is to identify outliers in distances between agendas. We identify outliers values in a data set of N observations by following the box plot construction.
+Four fences are defined based on a quartile division of the distribution, according to 
+The quantities (called fences) in \ref{eq:fences} are used, where $Q1$ is the lower quartile (range of the distribution where lies the 25th percent of the data), $Q3$ is the upper quartile (where lies the 75th percent of the data) and $IQ = Q3 - Q1$.
+
+\begin{eqnarray}\label{eq:fences}
+LIF & = Q1 - 1.5 IQ \nonumber \\
+UIF & = Q3 + 1.5  IQ \nonumber\\
+LOF & = Q1 - 3  IQ \nonumber \\
+UOF & = Q3 + 3 IQ
+\end{eqnarray}
+
+\par where $LIF$ stands for lower inner fence, $UIF$ for upper inner fence, $LOF$ for lower outer fence and $UOF$ for upper outer fence. A point above the upper inner fence considered a mild outlier and a point above an outer fence is considered an extreme outlier. The same holds for the lower fences \cite{natrella2010nist}. 
+
+
+\section*{Results}
+\label{results}
+
+\par We initially focus in the ten most important issues in the three months period corpus of news reported above. These ten topics, represented in the word clouds  of Fig.\label{fig:topics_wordclouds}, were reduced to seven (shown in the radar plot of the same figure) given the similarities found in, for instance, three of them that could be interpreted as part of the same macro-topic called \emph{Elections} and two others which were classified as part of a macro-topic called \emph{Missing person}. The meaning of the topics or macro-topics is contextualized in section \ref{sec:Context} of Supplementary Material. 
+\par Following the procedure described in the previous section, we construct the \textbf{Media Agenda (MA)} and the \textbf{Public Agenda (PA)} (Google and Twitter), and all their derivations, as time-dependent distributions. 
 
 \subsection*{The Public and Media agendas}
 
-\par In figure \ref{fig:topics_wordclouds} we show a ten topic decomposition of the whole corpus using radar plots for the Media \textbf{MA} and Public agendas \textbf{PA} discriminated by \textbf{GT} (Google Trends) and \textbf{Tw} (Twitter). A radar plot is an alternative of histograms that allows the visual comparison of distributions easier.
-In this figure we also show the wordclouds of the keywords that define each topic, where the size of the word reflects its importance in the topic's definition. In green color, we point out the words involved in the Google Trends and Twitter queries in order to construct the Public Agenda. The queries employed are also specified in table \ref{table:gt_queries}. In table \ref{table:gt_all_correlation} we show the linear correlation between the topics' temporal profiles from the Public Agenda and their counterparts in the Media Agenda.
-\par In figure \ref{fig:all_agenda} we show the time evolution of the topics with a bump chart of the Agendas. The bump chart provides  a very useful visualization tool for displaying the relative weight of the topics at the same time that their ranking. In figure \ref{fig:all_agenda} we also highlight some important events related to the dynamics of the topics. \footnote{Due to different characteristics in the search tool of Twitter, we adapted the queries employed here but preserving at least at we can the most important keywords. The queries employed by topic were: \\
+\par In figure \ref{fig:topics_wordclouds} we show a ten topic decomposition of the whole corpus using radar plots for the Media \textbf{MA} and Public agendas \textbf{PA} discriminated by \textbf{GT} (Google Trends) and \textbf{Tw} (Twitter). In this figure we also show the wordclouds of the keywords that define each topic, where the size of the word reflects its importance in the topic's definition. In green color, we point out the words involved in the Google Trends and Twitter  \footnote{Due to different characteristics in the search tool of Twitter, we adapted the queries employed here but preserving at least at we can the most important keywords. The queries employed by topic were: \\
 Elections: elecciones + cambiemos + kirchner + massa + randazzo \\
 Missing person: maldonado + otranto + gendarmer\'ia + desaparici\'on \\
 Former Planning minister: vido + desafuero + minnicelli + baratta \\
@@ -361,13 +388,20 @@ Current President: macri + cgt + laboral +  triaca \\
 Social leader:  sala + cidh + tupac + amaru + pullen + llermanos + morales \\
 Prosecutor’s death: nisman + amia + memorandum + timerman +  bonadio \\
 Former Vice-President:  boudou + ciccone +  lijo + vandenbroele + carmona
-}
-\par The figures introduced above show not only the topics and their differences between the Agendas, but also the dynamics of the topics.  For instance, we can see in the radar plot of figure \ref{fig:topics_wordclouds}, a greater interest of the audience in the topic \emph{Missing person} than the Media, or inversely in the topic \emph{Prosecutor's death}, at least in the analyzed time-lapse. 
-We can also observe a great similarity between \textbf{GT} and \textbf{Tw} agendas which both are different faces of the Public Agenda.
-\par On the other hand, figure \ref{fig:all_agenda} allow us to appreciate how the main topic change in time and have a glance of the qualitative differences between agendas.
-The linear correlations shown in table \ref{table:gt_all_correlation} are  positive and statistically significant in all the cases, This can be interpreted as a validation of the topics found in the corpus and the keywords that describe it. 
-Even though it is expected that the Media's and public's interest should generally follow a similar a pattern due to the external events, we are interested in those periods where they significantly differ. 
+} queries in order to construct the Public Agenda. The queries employed are also specified in table \ref{table:gt_queries}. In table \ref{table:gt_all_correlation} we show the linear correlation between the topics' temporal profiles from the Public Agenda and their counterparts in the Media Agenda.
+
+\par We can observe that both Public Agendas ($GT$ and $Tw$) look similar in this representation, but they show specific differences with the Media Agenda, where a greater interest of the audience in the topic \emph{Missing person} than the Media is observed, or inversely, a lower interest in the topic \emph{Prosecutor's death} takes place. However, this static representation is not able to show the complex dynamics of agenda's evolution and the importance of punctual and specific facts which can erase or amplify their differences. 
+
+\par This can be observed in figure \ref{fig:all_agenda} where the time evolution of the topics is shown in a bump chart of the Agendas. The bump chart provides  a clear visualization of the relative weight of the topics at the same time that their ranking. In  this figure  we also highlight some important events related to the dynamics of the topics and  it is  possible to appreciate how the main topic change in time and have a glance of the qualitative differences between agendas. In particular, it can be observed some differences between Public Agendas ($GT$ and $Tw$) that were not observed in the previous figure: 
+
+IN PARTICULAR.. COMENTAR MAS DE ESTE GRAFICO
+
+\par The linear correlations shown in table \ref{table:gt_all_correlation} are  positive and statistically significant in all the cases, This can be interpreted as a validation of the topics found in the corpus and the keywords that describe it. Even though it is expected that the Media's and public's interest should generally follow a similar a pattern due to the external events, we are interested in those periods where they significantly differ. 
 A non positive (or a non significant) correlation may imply, besides the obvious conclusion of agenda's disengagement, that we could eventually fail in properly detect the keywords or features that describe a particular topic, so the Google Trends' or Twitter's pattern would not be able to reflect a similar behavior that its counterpart in the Media.
+
+%\par The figures introduced above show not only the topics and their differences between the Agendas, but also the dynamics of the topics.  For instance, we can see in the radar plot of figure \ref{fig:topics_wordclouds}, a greater interest of the audience in the topic \emph{Missing person} than the Media, or inversely in the topic \emph{Prosecutor's death}, at least in the analyzed time-lapse. We can also observe a great similarity between \textbf{GT} and \textbf{Tw} agendas which both are different faces of the Public Agenda.
+
+
 
 \subsection*{A quantitative description of the Agendas}
 
@@ -597,14 +631,14 @@ The same procedure is proposed in absence of an alternative topic model to which
 \section*{Figures}
 
 \begin{figure}[h!]
-%\includegraphics[width = \textwidth]{Fig1.pdf}
+\includegraphics[width = \textwidth]{Fig1.pdf}
 \caption{\textbf{Radar plots of the Media and Public Agendas represented by the ten topic distribution and their corresponding wordclouds.} The Public Agenda is represented either by Google Trends (GT) and Twitter (Tw). 
 Topics names are introduced together with the wordclouds containing the most important keywords involved in the definition of each topic. In green color we show the keywords used to define the topics in the Google Trends and Twitter queries (see table \ref{table:gt_queries}) and therefore in our construction of the Public Agenda.}
 \label{fig:topics_wordclouds}
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[width = \textwidth]{Fig2.pdf}
+\includegraphics[width = \textwidth]{Fig2.pdf}
 \caption{\textbf{Bump graph of the Media Agenda (MA) and Public Agenda extracted from Google Trends (GT) and Twitter (Tw)}. The curves width and their ordering are related to the topics relative weight. Some important events related to the topics are pointed out:
 \textbf{A}: First news about Santiago Maldonado's disappearance;
 \textbf{B}: Primary elections;
@@ -620,37 +654,37 @@ A more detailed explanation is given in section \ref{sec:Context}.}
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[height=0.7\textheight]{Fig3.pdf}
+\includegraphics[height=0.7\textheight]{Fig3.pdf}
 \caption{\textbf{Shannon entropy (H) as a measure of agenda diversity.} The Public Agenda show a less diverse behavior than the Media Agenda as can be seen in the left figure. The horizontal lines are the lower inner fences of each signal in order to identify outliers. The related radar plots shows that those dates when the agenda has a low diversity, the most important topic catches the most public’s attention. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:shannon_entropy_agendas}
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[height = 0.7\textheight]{Fig4.pdf}
+\includegraphics[height = 0.7\textheight]{Fig4.pdf}
 \caption{\textbf{Jensen Shannon distance between the Media Agenda and the Public Agenda as a function of time} (with upper inner fences pointed out). The larger distances are due to a greater interest of the audience in the topic \emph{Missing person} which leads to lesser interest in the other topics, which the Media has to cover, maybe except in points (a) and (b) where the Media seems not to anticipate the public interest in the mentioned topic. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:jensen_shannon_gt}
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[width = \textwidth]{Fig5.pdf}
+\includegraphics[width = \textwidth]{Fig5.pdf}
 \caption{\textbf{Bump charts of newspapers' Agenda and radar plot of the average distributions.} The figure shows, in a qualitative way, the bias in the different newspaper's agendas. For instance, the greater interest of \emph{P\'agina 12 (P12)} in the \emph{Missing person} topic and its slightly lower coverage in the \emph{Former Planning minister} respect to the other newspapers.}
 \label{fig:news_agenda}
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[width = \textwidth]{Fig6.pdf}
+\includegraphics[width = \textwidth]{Fig6.pdf}
 \caption{\textbf{Jensen-Shannon distance between the newspapers agenda and the Media Agenda as a function of time}. \emph{P\'agina 12} shows the more different behavior, motivated again by its interest in the \emph{Missing person} and \emph{Social leader} topics as can be seen in the radar plots which belongs to points (a) and (c). The anomalous behavior of \emph{Infobae} at pint (b) is due to few articles around that date in our database, therefore we ignore its radar plot. \textbf{E}: Elections; \textbf{FPm}: Former Planning minister; \textbf{FVP}: Former Vice-President; \textbf{Sl}: Social leader; \textbf{Pd}: Prosecutor's death; \textbf{Mp}: Missing person; \textbf{CP}: Current President.}
 \label{fig:jensen_shannon_news}
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[width = \textwidth]{Fig7.pdf}
+\includegraphics[width = \textwidth]{Fig7.pdf}
 \caption{\textbf{Relative weight of the topics (a) \emph{Missing person}, and (b) \emph{Former Planning Minister}, and their corresponding word-clouds of frequent newspapers' keywords}. We interpreted the differences shown in given periods as an indicator of coverage bias. For instance, in figure (a) \emph{P\'agina 12} pays a greater attention in the first days. In the word-clouds, we show which of the defining words are more frequently used by the corresponding newspaper. Most of them are less informative, but other seems to represent a first approximation in the study of framing.}
 \label{fig:topics_temporal_profiles}
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[width = \textwidth]{Fig8.pdf}
+\includegraphics[width = \textwidth]{Fig8.pdf}
 \caption{\textbf{Agenda setting direction in Missing person's topic?}
 The temporal profiles of figure (a) show that the Public and Media agenda seem to differentiate around August 15th (vertical grey line (1)) and the Public increase abruptly its interest in the topic around August 24th (grey line (2)). It can be seen also in figure (b), where the discrete differences were computed. 
 With the computing of the cumulative sum of figure \ref{fig:topics_temporal_profiles} and figure (a), represented as a bump chart in figure (c), we suggest that the topic was first set by \emph{P\'agina 12} and then the Public's interest cause the coverage of the other Media.
@@ -659,8 +693,8 @@ With the computing of the cumulative sum of figure \ref{fig:topics_temporal_prof
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[scale = 0.4]{FigA2.pdf}
-%\includegraphics[scale = 0.4]{FigA1.pdf}
+\includegraphics[scale = 0.3]{FigA2.pdf}
+\includegraphics[scale = 0.3]{FigA1.pdf}
 \caption{Temporal profiles of topics \emph{Elections} (left) and \emph{Missing Person} (right) for both LDA and NMF. All the topics found by applying NMF have a highly correlated counterpart in LDA.} 
 \label{fig:temporal_profiles_nmf_lda}
 \end{figure}
@@ -727,14 +761,14 @@ Prosecutor's death & \textbf{0.83} \\
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Additional Files}
-  \subsection*{Additional file 1 --- Sample additional file title}
-    Additional file descriptions text (including details of how to
-    view the file, if it is in a non-standard format or the file extension).  This might
-    refer to a multi-page table or a figure.
+%\section*{Additional Files}
+%  \subsection*{Additional file 1 --- Sample additional file title}
+%    Additional file descriptions text (including details of how to
+%    view the file, if it is in a non-standard format or the file extension).  This might
+%    refer to a multi-page table or a figure.
 
-  \subsection*{Additional file 2 --- Sample additional file title}
-    Additional file descriptions text.
+%  \subsection*{Additional file 2 --- Sample additional file title}
+%    Additional file descriptions text.
 
 
 \end{backmatter}
