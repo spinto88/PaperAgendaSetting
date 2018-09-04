@@ -258,28 +258,28 @@ We measure agenda diversity as a function of time using the Shannon entropy and 
 
 %\subsection*{Agenda Setting Theory}
 
-\par One of the challenges in  complex social system research is to understand of the ecosystem of information flow and opinion formation. Within this framework, many ingredients can be parts of different mechanisms of social influence. A major role in this ecosystem is played by the Mass Media outlets, which is used to be the source of information for many people.  Then, informed people tend to interact with each other  via personal interactions or through social networks, giving rise to complex dynamics where opinions are shaping and changing in time. In this scenario to understand the role of Mass Media Influence in a given social group  becomes essential.
+\par One of the challenges in  complex social system research is to understand the ecosystem of information flow and opinion formation. Within this framework, many ingredients can be parts of different mechanisms of social influence. A major role in this ecosystem is played by the mass media outlets, which is used to be the source of information for many people.  Then, informed people tend to interact with each other  via personal interactions or through social networks, giving rise to a complex dynamics where opinions are shaping and changing in time. In this scenario to understand the role of the mass media influence in a given social group  becomes essential.
 
 
 % Agenda Setting Theory
-\par Naturally, how the Media affects public opinion was first explored in the area of social sciences. 
+\par Naturally, how the media affects public opinion was first explored in the area of social sciences. 
 In the seminal study performed in Chapel Hill during the US presidential elections in 1968 \cite{mccombs1972agenda}, Maxwell McCombs and Donald Shaw found that the aspects of public affairs that are prominent in the news become prominent in the public. This work is considered the founding of the agenda-setting theory.
 In its basic stage, known as first-level agenda-setting \cite{mccombs2005look}, the theory focuses on the comparison between the topics coverage by the media and the public agenda: The topics that the public consider as priority.
-For instance, it explores how media content correlate with audiences of different ages \cite{coleman2007young} and how people agendas differ based on the way they consume news \cite{althaus2002agenda}.
+For instance, within the agenda-setting framework, it was explored how media content correlate with audiences of different ages \cite{coleman2007young} and how people agendas differ based on the way they consume news \cite{althaus2002agenda}.
 On the other hand, the theory hypothesizes how the media affect the audience opinion, for instance, how political coverage and political advertisement shape candidate knowledge among the audience \cite{brians1996campaign, gerber2009does}, or how the coverage given by the media to a particular nation affects people perception about its importance to local political interests \cite{wanta2004agenda}.
-Related to our work, in Argentina, \cite{mitchelstein2016brecha} examines the differences between public and journalists preferences and other works, like \cite{zunino2010cobertura, koziner2013cobertura}, studied the coverage of the main newspapers on particular events related to a confrontation scenario between government and press \cite{mitchelstein2017information}.
+Related to our work, in Argentina, \cite{mitchelstein2016brecha} examines the differences between public and journalists preferences, and other works like \cite{zunino2010cobertura, koziner2013cobertura}, studied the coverage of the main newspapers on particular events related to a confrontation scenario between government and press \cite{mitchelstein2017information}.
 
 %during the former administration of Argentinian president \emph{Cristina Fern\'andez de Kirchner} (from 2007 to 2015), where the government started to confront with news organizations that were critical to its management \cite{mitchelstein2017information}.
 
 \par The Chapel Hill investigation also induced other several research directions \cite{mccombs2005look}.
 One of them focus on detecting bias in the media, either by taking into account the number of mentions related  to a preferred political party \cite{lazaridou2016identifying, baumgartner2015all} or by identifying the ideology through the position of the media regards to certain issues or actors \cite{elejalde2018nature, sagarzazu2017hugo}. 
-This research line can be linked with the theory of \textit{framing} \cite{guggenheim2015dynamics, tsur2015frame}, which focus on the way media emphasizes some attributes of an object, while understating others. 
-Other investigations pay attention to the sources of the Media Agenda, theory known as \textit{intermedia agenda-setting} \cite{vargo2017networks, harder2017intermedia, guo2017global}, where the competition and the mutual influence between different media is observed.
+This research line can be linked with the theory of \textit{framing} \cite{guggenheim2015dynamics, tsur2015frame}, which focus on the way the media emphasizes some attributes of an object, while understating others. 
+Other investigations pay attention to the sources of the media agenda, theory known as \textit{intermedia agenda-setting} \cite{vargo2017networks, harder2017intermedia, guo2017global}, where the competition and the mutual influence between different media is observed.
 
 %New trends in agenda-setting theory propose to represent ideological aspects or issues emphasized as networks like mind maps, and the basic idea is the comparison between media's knowledge representative network with its counterpart in the audience \cite{guo2012application, vu2014exploring}.
 
 %\par Nonetheless, most of the works cited above follow typical methods of social science research, and fall in what we call a ``static approach": They used to summarize certain issues present in news media and looking for effects in the audience.
-\par From the irruption of internet, quantitative analysis based on  the access to big data were possible and, for instance, take into account the temporal dependence of the Media and Public attention. 
+\par From the irruption of internet, quantitative analysis based on  the access to big data were possible and, for instance, take into account the temporal dependence of the media and public attention. 
 In \cite{soroka2017negativity} it is shown that the newspapers and Twitter have an opposite reaction to the changes of the unemployment rates; in \cite{guggenheim2015dynamics}, the competition of frames about gun control is explored; in \cite{ali2018measuring}, the authors show how fluctuations of Twitter activity in different regions depend on the location of terrorist attacks; and in \cite{russell2014dynamics}, the complex interplay between the social media and the traditional one is followed over time on a set of predefined, but general, issues.
 However the works cited above have performed a dynamical analysis of agenda-setting based on a single issue or on a set of predefined issues. These are usually  selected by the researcher and use to reflect general subjects, such as ``health" or ``gun control".
 
@@ -289,18 +289,19 @@ It is an alternative to the dictionary-based analysis, which is the most popular
 Although many works employ unsupervised topic modeling on news corpus, much of them emphasize the performance of the topic model over a labeled corpus, focusing on the proper detection of the topics \cite{dai2010online, po2016topic, brun2000experiment}. 
 In general, issues about the temporal profile of topics are embedded in the context of topic tracking \cite{hu2016news, li2017joint}, or in the recognition of emerging topics in real-time \cite{cataldi2010emerging}, mostly applied to social media. 
 
-\par In this work we propose a novel method in order to study the dynamics of Mass Media Agenda, which consist in performing an unsupervised topic model on newspapers articles, and studying how the emerging topics evolve in time. 
-We look also at their correspondence with the Public and Social Network Agendas. Rather than focus on a single issue or a set of independent topics, this method allow us to define  the agendas (the Media and the Public) as an object which evolved in time.
-Our work focus on a quantitative approach which complements the agenda-setting theory describe above, which mainly stands within the framework of first-level agenda setting, but also allows to face  agenda bias and framing.
+\par In this work we propose a novel method in order to study the dynamics of the mass media agenda, which consist of performing an unsupervised topic model on newspapers articles, and studying how the emerging topics evolve in time. 
+We look also at their correspondence with the audience agenda, by looking at the Google searches and Twitter in the studied period. 
+Rather than focus on a single issue or on a set of independent topics, this method allows us to define  the agendas (both the media and the public) as an object which evolves in time.
+Our work focus on a quantitative approach which complements the agenda-setting theory describe above, which mainly stands within the framework of first-level agenda setting, but also allows us to face agenda bias and framing.
 
-\par On the other hand, in recent years new approaches to study social dynamics through several tools taken from statistical physics have proposed mathematical models to explore the interplay between Mass Media and society \cite{crokidakis2012effects,gonzalez2012model, moussaid2013opinion, rodriguez2010effects, pinto2016setting}. Much of them lack in being contrasted with real data. 
-With our work we aim to gain a closer insight on the complex interaction between Media and Public, and provide a quantitative research that would be useful at the time of constructing better and more data-driven models.
+\par On the other hand, in recent years new approaches to study social dynamics through several tools taken from statistical physics have proposed mathematical models to explore the interplay between the mass media and society \cite{crokidakis2012effects,gonzalez2012model, moussaid2013opinion, rodriguez2010effects, pinto2016setting}. Much of them lack in being contrasted with real data. 
+With our work we aim to gain a closer insight on the complex interaction between the media and the public, and provide a quantitative research that would be useful at the time of constructing better and more data-driven models.
 
 \section*{Materials and Methods}
  \label{sec:MatMeth}
 
 \subsection*{The Media Agenda}
-\par In this work we analyze a three-month period of the Argentinian Media Agenda composed by a corpus of news articles that were published between July 31st, 2017 and November 5th, 2017. 
+\par In this work we analyze a three-month period of the Argentinian media agenda composed by a corpus of news articles that were published between July 31st, 2017 and November 5th, 2017. 
 The articles come from the politics section of the online editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal, \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}. On the other hand, \emph{Infobae} has the most visited website, much more than \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
 The corpus analyzed is made up by 2908 politics articles of \emph{Clar\'in}, 3565 of \emph{La Naci\'on}, 3324 of \emph{P\'agina 12}, and 2018 of \emph{Infobae}. Except \emph{P\'agina 12}, all articles were taken from the section \emph{Pol\'itica}  (Politics) of the respective news portals, while the articles which belong to \emph{P\'agina 12} were taken from the section \emph{El pa\'is} (The country).
 
