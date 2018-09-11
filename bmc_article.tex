@@ -193,12 +193,16 @@
 
 \begin{abstract} % abstract
 
-The mass media plays a fundamental role in the formation of public opinion, either by defining the topics of discussion or by making an emphasis on certain issues. Directly or indirectly, people get informed by consuming news from the media. But which is the dynamics of the agenda and how the people become interested in their different topics? 
-The agenda-setting theory provides a conceptual framework in order to understand the role played by the mass media in public opinion formation, but the previous questions can not be answered without proper quantitative measures of agenda dynamics and public attention. 
-In this work we study the media agenda in comparison with public interests through a quantitative approach by performing topic detection over the news, identifying the main topics covered and their evolution over time. 
-We measure agenda diversity as a function of time using the Shannon entropy and differences between agendas using the Jensen-Shannon distance. We found that the Public Agenda is less diverse than the Media Agenda, and we were also capable of detecting periods of time where coverage of certain issues are biased (coverage bias).\\
+The mass media plays a fundamental role in the formation of public opinion, either by defining the topics of discussion or by making an emphasis on certain issues. Directly or indirectly, people get informed by 
+consuming news from the media. But what are the dynamics of the agenda and how the people become interested in their different topics? 
+This  question cannot be answered without proper quantitative measures of agenda dynamics and public attention. 
+In this work we study the agenda of newspapers in comparison with public interests  by performing topic detection over the news and identifying the main topics covered and their evolution over time. 
+We measure agenda diversity as a function of time using the Shannon entropy and differences between agendas using the Jensen-Shannon distance. We found that the Public Agenda is less diverse than the Media Agenda, especially when there is a very attractive topic and the audience naturally focuses only on this one. Using the same methodology we  detect coverage bias in newspapers and have a first approximation to the theory of framing.
+Finally it was possible to identify a complex agenda-setting dynamics within a given topic where the least sold newspaper  triggered a public debate  via a positive feedback mechanism with social networks discussions which install the issue in the Media Agenda.\\
 
 \end{abstract}
+
+%hen there is a very attractive topic, the audience naturally focuses only on this one
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -262,55 +266,55 @@ We measure agenda diversity as a function of time using the Shannon entropy and 
 \par One of the challenges in  complex social system research is to understand the ecosystem of information flow and opinion formation. 
 %Within this framework, many ingredients can be parts of different mechanisms of social influence. 
 A major role within this ecosystem is played by the mass media outlets, which are massively used as sources of information.
-People get informed by the media and then interact with each other  via personal interactions or through social networks, giving rise to a complex dynamics where opinions are shaping and changing with time. 
+People get informed by the media and then interact among them via personal discussions or through social networks, giving rise to a complex dynamics where opinions are shaping and changing with time. 
 In this scenario, it becomes essential to understand the influence of mass media in a given social group.
 
 
 % Agenda Setting Theory
 \par The influence of the media on public opinion was first explored by the social sciences. 
 In the seminal study performed in Chapel Hill during the US presidential elections in 1968 \cite{mccombs1972agenda}, Maxwell McCombs and Donald Shaw found that the aspects of public affairs that are prominent in the news become prominent in the public. This work is considered the founding of the agenda-setting theory.
-In its basic stage, known as first-level agenda-setting \cite{mccombs2005look}, the theory focuses on the comparison between the topics coverage by the media and the public agenda: The topics that the public consider as priority.
+In its basic stage, known as first-level agenda-setting \cite{mccombs2005look}, the theory focuses on the comparison between the topics coverage by the media and the public agenda, i.e., the topics that the public consider as priority.
 For instance, within the agenda-setting framework, it was explored how media content correlate with audiences of different ages \cite{coleman2007young} and how people agendas differ based on the way they consume news \cite{althaus2002agenda}.
-On the other hand, the theory hypothesizes how the media affect the audience opinion, for instance, how political coverage and political advertisement shape candidate knowledge among the audience \cite{brians1996campaign, gerber2009does}, or how the coverage given by the media to a particular nation affects people perception about its importance to local political interests \cite{wanta2004agenda}.
-Other works examine the differences between public and journalists preferences \cite{mitchelstein2016brecha}, or studied the coverage of the main newspapers on particular events related to a confrontation scenario between government and press \cite{zunino2010cobertura, koziner2013cobertura}.
+On the other hand, the theory hypothesizes how the media affects the audience opinion, in particular, how political coverage and political advertisement shape candidate knowledge among the audience \cite{brians1996campaign, gerber2009does}, or how the coverage given by the media to a particular nation affects people perception about its importance to local political interests \cite{wanta2004agenda}.
+Other works examine the differences between public and journalists preferences \cite{mitchelstein2016brecha}, or study the coverage of the main newspapers on particular events related to a confrontation scenario between government and press \cite{zunino2010cobertura, koziner2013cobertura}.
 
 %during the former administration of Argentinian president \emph{Cristina Fern\'andez de Kirchner} (from 2007 to 2015), where the government started to confront with news organizations that were critical to its management \cite{mitchelstein2017information}.
 
 \par The Chapel Hill investigation also induced other several research directions \cite{mccombs2005look}.
-One of them focus on detecting bias in the media, either by taking into account the number of mentions related  to a preferred political party \cite{lazaridou2016identifying, baumgartner2015all} or by identifying the ideology through the position of the media regards to certain issues or actors \cite{elejalde2018nature, sagarzazu2017hugo}. 
+One of them focus on detecting media bias, either by taking into account the number of mentions related  to a preferred political party \cite{lazaridou2016identifying, baumgartner2015all} or by identifying the ideology through the position of the media regards to certain issues or actors \cite{elejalde2018nature, sagarzazu2017hugo}. 
 This research line can be linked with the theory of \textit{framing} \cite{guggenheim2015dynamics, tsur2015frame}, which focus on the way the media emphasizes some attributes of an object, while understating others. 
-On the other hand, several investigations pay attention to the sources of the media agenda, theory known as \textit{intermedia agenda-setting} \cite{vargo2017networks, harder2017intermedia, guo2017global}, where the competition and the mutual influence between different media is observed.
+On the other hand, several investigations pay attention to the sources of the media agenda, theory known as \textit{intermedia agenda-setting} \cite{vargo2017networks, harder2017intermedia, guo2017global}, where the competition and the mutual influence between different media are observed.
 
 %New trends in agenda-setting theory propose to represent ideological aspects or issues emphasized as networks like mind maps, and the basic idea is the comparison between media's knowledge representative network with its counterpart in the audience \cite{guo2012application, vu2014exploring}.
 
 %\par Nonetheless, most of the works cited above follow typical methods of social science research, and fall in what we call a ``static approach": They used to summarize certain issues present in news media and looking for effects in the audience.
-\par Since the irruption of internet, a quantitative analysis based on  the access to big data has been possible. For instance, this analysis can take into account the temporal dependence of the media and public attention. 
+\par Since the irruption of internet, a quantitative analysis based on  the access to big data became available, as for instance, those who takes into account  temporal dependence of the media and public attention. 
 In \cite{soroka2017negativity} it is shown that the newspapers and Twitter have an opposite reaction to the changes of the unemployment rates; in \cite{guggenheim2015dynamics}, the competition of frames about gun control is explored; in \cite{ali2018measuring}, the authors show how fluctuations of Twitter activity in different regions depend on the location of terrorist attacks; and in \cite{russell2014dynamics}, the complex interplay between the social media and the traditional one is followed over time on a set of predefined, but general, issues.
 However the works cited above have performed a dynamical analysis of agenda-setting based on a single issue or on a set of predefined issues. These are usually  selected by the researcher and use to reflect general subjects, such as ``health" or ``gun control".
 
 % Machine Learning
-\par The question about what issues should be selected can be solved by an useful tool employed in the analysis of large documents corpus, but understated in the agenda-setting framework and its derivatives: Unsupervised topic modeling. 
+%by an useful tool employed in the analysis of large documents corpus, but understated in the agenda-setting framework and its derivatives:
+
+\par However, a data driven selection of issues can be performed using a tool frequently employed in the analysis of large document corpus: Unsupervised topic modeling. 
 It is an alternative to the dictionary-based analysis, which is the most popular automated analysis approach \cite{guo2016big}, and allows to work with a corpus without a prior knowledge, letting the topics emerge from the data. 
 Although many works employ unsupervised topic modeling on news corpus, much of them emphasize the performance of the topic model over a labeled corpus, focusing on the proper detection of the topics \cite{dai2010online, po2016topic, brun2000experiment}. 
 In general, issues about the temporal profile of topics are embedded in the context of topic tracking \cite{hu2016news, li2017joint}, or in the recognition of emerging topics in real-time \cite{cataldi2010emerging}, mostly applied to social media. 
 
-\par In this work we propose a novel method in order to study the dynamics of the mass media agenda, which consist of performing an unsupervised topic model on newspapers articles, and studying how the emerging topics evolve with time. 
+\par In this work we propose a novel method in order to study the dynamics of the mass media agenda, which consists of performing an unsupervised topic model on newspapers articles, and studying how the emerging topics evolve with time. 
 We look also at their correspondence with the audience agenda, by looking both the Google searches and Twitter activity in the studied period. 
 Rather than focus on a single issue or on a set of independent topics, this method allows us to define  the agendas (both the media and the public) as an object which evolves with time.
 Our work focuses on a quantitative approach which complements the agenda-setting theory describe above, which mainly stands within the framework of first-level agenda setting, but also allows us to face agenda bias and framing.
-We apply this method to study the dynamics of the Argentinian media agenda due to our familiarity with the political background, but as can be seen throughout the work, the methodology implemented is far general and can be easily extended to other data-sets. 
+We apply this method to study the dynamics of the Argentinian media agenda due to our familiarity with the political background, but as can be seen throughout the work, the methodology implemented is far general and can be easily extended to other datasets. 
 
-
-
-\par On the other hand, in recent years new approaches to study social dynamics through several tools taken from statistical physics have proposed mathematical models to explore the interplay between the mass media and society \cite{crokidakis2012effects,gonzalez2012model, moussaid2013opinion, rodriguez2010effects, pinto2016setting}. Much of them lack in being contrasted with real data. 
-With our work we aim to gain a closer insight on the complex interaction between the media and the public, and provide a quantitative research that would be useful at the time of constructing better and more data-driven models.
+\par On the other hand,  new approaches to study social dynamics coming from statistical physics have proposed mathematical models to explore the interplay between the mass media and society \cite{crokidakis2012effects,gonzalez2012model, moussaid2013opinion, rodriguez2010effects, pinto2016setting}. However, much of them lack in being contrasted with real data. 
+In this work we are intended to get a closer insight on the complex interaction between the media and the public, and provide a quantitative research in order to construct better and more data-driven models.
 
 \section*{Materials and Methods}
  \label{sec:MatMeth}
 
 \subsection*{The Media Agenda}
-\par In this work we analyze a three-month period of the Argentinian media agenda composed by a corpus of news articles that were published between July 31st, 2017 and November 5th, 2017. 
-The articles come from the politics section of the online editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal, \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}. On the other hand, \emph{Infobae} has the most visited website, much more than \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
+\par We analyze a three-month period of the Argentinian media agenda composed by a corpus of news articles that were published between July 31st, 2017 and November 5th, 2017. 
+The articles come from the political section of the online editions of the Argentinian newspapers \emph{Clar\'in}, \emph{La Naci\'on}, \emph{P\'agina12}, and the news portal, \emph{Infobae}. The first two lead the sale of printed editions in \emph{Buenos Aires} city, but \emph{Clar\'in} reaches roughly two times the readers of \emph{La Naci\'on}, and ten times the readers of \emph{P\'agina 12} \cite{IVC}, who was chosen because of its left political orientation. On the other hand, \emph{Infobae} has the most visited website, much more than \emph{Clar\'in} and \emph{La Naci\'on} \cite{AlexaAR}.
 The corpus analyzed is made up by 2908 politics articles of \emph{Clar\'in}, 3565 of \emph{La Naci\'on}, 3324 of \emph{P\'agina 12}, and 2018 of \emph{Infobae}. Except \emph{P\'agina 12}, all articles were taken from the section \emph{Pol\'itica}  (Politics) of the respective news portals, while the articles which belong to \emph{P\'agina 12} were taken from the section \emph{El pa\'is} (The country).
 
 \par The articles are described as numerical vectors through the \textit{term frequency - inverse document frequency (tf-idf)} representation \cite{xu2003document}. 
@@ -323,7 +327,7 @@ x_{ij} = \textrm{tf}_{ij} \cdot \textrm{idf}_{j} = \textrm{tf}_{ij} \cdot [1 + \
 \label{ec:tfidf}
 \end{equation}
 
-\par In order to detect the main topics in the corpus, we perform \emph{non-negative matrix factorization (NMF)} \cite{xu2003document, lee1999learning} on the document-term matrix (\emph{M}). A topic is defined to be a group of similar articles which roughly talks about the same subject. 
+\par In order to detect the main topics in the corpus, we perform \emph{non-negative matrix factorization (NMF)} \cite{xu2003document, lee1999learning} on the document-term matrix (\emph{M}). A topic is defined as a  group of similar articles which roughly talks about the same subject. 
 \emph{NMF} is an unsupervised topic model which factorizes the matrix \emph{M} into two matrices \emph{W} and \emph{H} with the property that all three matrices have no negative elements (see eq.(\ref{eq:nmf})).
 This non-negativity makes the resulting matrices easier to inspect, and very suitable for topic detection \footnote{ Even though there are other techniques in topic detection, as for instance LDA (Latent Dirichlet Allocation), the NMF decomposition suites perfect for the kind of corpus we  have analyzed in this work (A detailed comparison of both, NMF and LDA methods could be found in \textbf{Supplementary Material}).}. 
 \begin{equation}
@@ -331,16 +335,16 @@ M^{(d \times t)} \sim H^{(d \times k)} \cdot W^{(k \times t)}
 \label{eq:nmf}
 \end{equation}
 Such as the resulting matrix \emph{H} has dimensions of number of documents by $k$ and matrix \emph{W} has dimensions of $k$ per number of terms, the number $k$ is therefore interpreted as the number of topics in the documents and it is a parameter that must be set before the factorization.
-In this work, we arbitrarily set $k=10$. We found this value to be a suitable one based on our knowledge of the corpus.
+In this work, we arbitrarily set $k=10$, based on our knowledge of the corpus.
 Since the factorization of eq.(\ref{eq:nmf}) usually can not be made exactly, it is approximated by minimizing the reconstruction error, i.e. the distance between matrix \emph{M} and its approximated form $\tilde{M} = H \cdot W$. The \emph{NMF} factorization was made through the python module \emph{scikit-learn} \cite{scikit-learn}.
 
 
 \par The matrix \emph{H} is the representation of the documents in the topic space. We normalized its rows to unit $l_1$-norm in order to view their components as a degree of membership of a given document in the set of topics. In particular, the index of the largest component tells us which is the most representative topic of the document.
 On the other hand, \emph{W} gives the topics representation in the original term space. The largest components of a row give the most representative words of each topic, which we call \emph{keywords}, and therefore an insight of what the topic is talking about.
 
-\par After performing NMF, we represent the time-dependent Media Agenda as a time evolving distribution of topics. We define $W_i(day)$ to be the daily weight of the topic $i$, which is calculated following the eq.(\ref{eq:topic_weight}), where $l(j)$ is the number of words of the document $j$; $h_{ji}$ is the degree of membership of document $j$ on topic $i$; $d_j$ is the date of document $j$; and $\delta$ is the Kronecker delta. 
+\par After performing NMF, we represent the time-dependent Media Agenda as a time-evolving distribution of topics. We define $W_i(day)$ to be the daily weight of the topic $i$, which is calculated following the eq.(\ref{eq:topic_weight}), where $l(j)$ is the number of words of the document $j$; $h_{ji}$ is the degree of membership of document $j$ on topic $i$; $d_j$ is the date of document $j$; and $\delta$ is the Kronecker delta. 
 Providing by the fact that each document vector can have all non-zero components, it is allowed that a document contributes to more than one topic weights.
-In order to reduce noise, we apply a linear filter with a three day wide sliding window, and finally we normalize the temporal profiles in order to describe each newspaper agenda as a distribution over the topics' space, which evolves over time. 
+In order to reduce noise, we apply a linear filter with a three day wide sliding window, and finally we normalize the temporal profiles in order to describe each newspaper agenda as a distribution over the topic space, which evolves over time. 
 %This last normalization prevent us against the differences in the number of articles that each newspaper publishes.
 
 \begin{equation}
@@ -350,19 +354,19 @@ W_i(day) = \sum_j l(j) \cdot h_{ji} \cdot \delta_{d_j,day}
 
 \subsection*{The Google and Twitter Agendas}
  
-\par The other side of the Media Agenda is to have some measure of the public interests about its topics, by finally making up what we call the Public Agenda. 
-To achieve this goal, we take Google and Twitter as proxies of the public interests by looking for the same topics in the same period of time. We take advantage of the topic keywords in order to make queries into the \emph{Google Trends} tool and into the advance search tool of Twitter, and therefore to get the relative weight of searches and tweets in each respective platform. 
-Therefore we describe the Public Agenda by describing, in an independent way, both the Google and Twitter Agendas. 
+\par Besides the construction of the Media Agenda it is important to have some measure of the public interests and construct what we call the Public Agenda. 
+To achieve this goal, we take Google and Twitter as proxies of the public interests by looking for the same topics in the same period of time. We take advantage of the topic keywords in order to make queries into the \emph{Google Trends} tool and into the advance search tool of Twitter, and therefore we get the relative weight of searches and tweets in each respective platform. 
+In this way, the Public Agenda is described, in an independent way, by the Google and Twitter Agendas. 
 In section \textbf{Results} we will give a more detailed description of the keywords involved in their construction.
 
 \subsection*{Normalized Shannon Entropy ($H$)}
 
 \par In fact, one of the key of our work is the representation of the Agendas as time evolving topic distributions, and the association between the different measures that we can derive from them with the social events observed during the period.
-In order to do that, the first measure we emphasize is the concept of \emph{diversity of the attention}.
+In order to do that, we focus in the concept of \emph{diversity of the attention}.
 \emph{Diversity} is a very important variable that must be taken into account when dealing with multiple issues \cite{boydstun2014importance}, due to the fact that it tells us how the attention is distributed across the different topics of discussion. 
-As was proposed in \cite{boydstun2014importance}, we take the normalized Shannon entropy as a very suitable way to quantify the diversity within our framework.
-\par The normalized Shannon entropy $H[p]$ referred in eq.(\ref{eq:shannon_entropy}) gives us a measure of how spread is a -discrete- distribution, taking the maximum value of $1$ when all outcomes are equally probable, and $0$ when there is just one possible outcome. 
-This last case, or an approximated one, will be of particular interest for us because it tells about a topic which absorbs all the attention either from the Media or the Public, while the former shows an absolutely unbiased interest towards any of the topics.
+As was proposed in \cite{boydstun2014importance}, we use the normalized Shannon entropy to quantify the diversity within our framework.
+\par The normalized Shannon entropy $H[p]$ referred in eq.(\ref{eq:shannon_entropy}) gives us a measure of how spread is a -discrete- distribution, taking the maximum value of $1$ when all outcomes are equally probable (as in the case of having a diverse agenda), and $0$ when there is just one possible outcome (when one topic of discussion dominates the agenda). 
+%This last case, or an approximated one, will be of particular interest for us because it tells about a topic which absorbs all the attention either from the Media or the Public, while the former shows an absolutely unbiased interest towards any of the topics.
 
 \begin{equation}
 H[p] = \frac{- \sum_{i = 1}^{N} p(x_i) * ln(p(x_i))}{ln(N)}
@@ -371,8 +375,8 @@ H[p] = \frac{- \sum_{i = 1}^{N} p(x_i) * ln(p(x_i))}{ln(N)}
 
 \subsection*{Jensen-Shannon distance}
 
-\par While the diversity is a property of each distribution, a natural question that arises from comparing different distributions is how similar they are. For instance, we will be particularly interested in measuring the similarity between the Media and Public Agendas, because those dates when the similarity is low tell us about distant interests of the media and its audience.
-We proposed here to measure the similarity between distributions by the use of the Jensen-Shannon distance ($JSD$). 
+\par While the diversity is a property of each distribution, a natural question that arises when comparing different distributions is how similar they are. For instance, we will be particularly interested in measuring the similarity between the Media and Public Agendas, because lower values would indicate distant interests between the media and its audience.
+We measure the similarity between distributions via the Jensen-Shannon distance ($JSD$). 
 When the similarity of the distributions is low, the distance between them is high.
 \par The Jensen-Shannon distance ($JSD$) is a metric between distributions based on the Jensen-Shannon divergence ($JS_{Div}$) \cite{fuglede2004jensen}, which is in turn a symmetric version of the well-known Kullback-Leibler divergence $D_{KL}$ (eq.(\ref{eq:kl})). 
 We recall that the $JSD$ has the advantage of being symmetric and also a well-defined distance, which makes it conceptually easier to deal with.
@@ -391,7 +395,7 @@ JSD(P,Q) = \sqrt{JS_{Div}(P,Q)} = \sqrt{\frac{1}{2}[D_{KL}(P||M) + D_{KL}(Q||M)]
 
 \subsection*{Outliers identification}
 
-\par As was mentioned before, once the concepts of diversity and distance between distributions were defined, we are particularly interested in those dates when these concepts take extreme values: When the diversity is low, we know that a topic is absorbing much of the attention of any of the Agendas; on the other hand, when the distance between two distributions is high, we can conclude that they have distant interests.
+\par As was mentioned before, once the concepts of diversity and distance between distributions were defined, we are particularly interested in those dates when these measures take extreme values: Lower values of diversity indicate a topic which is absorbing much of the attention of any of the Agendas; on the other hand, when the distance between two distributions is high, we can conclude that they have distant interests.
 However, we still lack the definition of what a low diversity or a high distance are. 
 We face this problem by treating the measures of each observable as random samples from a population with unknown distribution, and identifying those extreme values as outliers of the distribution. 
 In order to detect these outliers we follow the popular box-plot construction proposed by Tukey \cite{tukey1977exploratory}, which is a simple data-driven method and has the advantage of making no prior assumption about the distribution of the data. 
@@ -418,7 +422,7 @@ Given our interpretation of the keywords found in three of them, we joined these
 On the other hand, the same holds for other two topics which were classified as part of a macro-topic called \emph{Missing person}. 
 Therefore, the ten original topics were reduced to seven, which are pointed out in the radar plot of figure \ref{fig:topics_wordclouds}.
 The meaning of the topics or macro-topics is contextualized in the \textbf{Supplementary Material}.
-\par Finally, by following the procedure described in the previous section, we construct the \textbf{Media Agenda (MA)} and the \textbf{Public Agenda (PA)}, in both its Google and Twitter derivations, as time evolving distributions in a space of seven topics.
+\par Finally, by following the procedure described in the previous section, we construct the \textbf{Media Agenda (MA)} and the \textbf{Public Agenda (PA)}, in both its Google and Twitter derivations, as time-evolving distributions in the space of seven topics.
 
 \subsection*{The Media and Public Agendas}
 
@@ -438,7 +442,7 @@ A non positively (or a non significantly) correlation may imply, besides the obv
 
 \subsubsection*{Agenda diversity}
 
-\par How dominant is a main topic? Is the degree of dominance of a given topic in the Media Agenda reflected in the Public Agenda? In order to answer such kind of questions we quantify the diversity of the agendas through the normalized Shannonentropy $H$, which was introduced in section \textbf{Material and Methods}.
+\par How dominant is a main topic? Is the degree of dominance of a given topic in the Media Agenda reflected in the Public Agenda? In order to answer such kind of questions we quantify the diversity of the agendas through the normalized Shannon entropy $H$, which was introduced in section \textbf{Material and Methods}.
 \par In figure \ref{fig:shannon_entropy_agendas} we can see the value of $H$ as a function of time for the three agendas. It is important to pay attention to those periods of time when the diversity is lower than usual. This effect is notoriously more pronounced in the Public Agenda giving by GT, and in particular in four specific days when four local minimums of the Shannon entropy can be detected. Three of them are outliers as defined in section \textbf{Material and Methods}, two of them from GT and one from Tw. The other one has been not identified as an outlier but it is a pronounced minimum and therefore a point of interest in our description. 
  
 \par A lower value in the agenda diversity is due to the fact that the most important topic attracts practically all the attention of the public and the media, collapsing the agenda to one of the issues involved.
@@ -456,7 +460,7 @@ From all this analysis we  can conclude that given a finite set of topics, \text
 \subsubsection*{Distance between Media and Public Agendas}
 
 \par Given our descriptions of the agendas as time-evolving distributions, we can  compare them by computing the Jensen-Shannon distance. In this context, outliers in selected dates will correspond to divergences between the Media and Public Agenda: Specific events when the public interests do not match with media offer.
-In figure \ref{fig:jensen_shannon_gt} we show the Jensen-Shannon distance between Media and Public Agendas as a function of time. We focus on three points that seem to be relevant enough. In all cases, the topic distributions at that particular dates displayed by  the radar plots show that the increment in the distance between agendas is due to a greater interest of public opinion in the \emph{Missing person} topic. 
+In figure \ref{fig:jensen_shannon_gt} we show the Jensen-Shannon distance between Media and Public Agendas as a function of time. We focus on three points that seem to be relevant enough. In all cases, the topic distributions at these days displayed show that the increment in the distance between agendas is due to a greater interest of public opinion in the \emph{Missing person} topic. 
 
 \par Points \textbf{(c)} and \textbf{(d)} show that both the public and the media highlight this topic, but the media do not disregard other topics, so the corresponding distance between them can be interpreted as lack of diversity in Public Agenda as discussed in the last section.
 
@@ -464,7 +468,7 @@ In figure \ref{fig:jensen_shannon_gt} we show the Jensen-Shannon distance betwee
 In figure \ref{fig:all_agenda} we can see that this topic becomes the most important in public interests (both in GT and Tw) days before that it happens in the Media Agenda. This fact can be associated  with a social networks (like Facebook and Twitter) campaign  in favor  of the appearance of \emph{Santiago Maldonado} (``The missing person") that took place on  August 26th. This campaign was massive and  initially underestimated by the main media outlets in Argentina (see \textbf{Supplementary Material}). 
 
 \par % It is important to notice that it is our interpretation of the data based on the knowledge of the context, and  we are not measuring causality between Agendas (we will say a few words about it in section \ref{sec:who_sets}), i.e. we can't say, for instance, that in this case the Public Agenda set the Media Agenda. 
-Finally, it is important to say that the Jensen-Shannon distance, in conjunction with the measurement of agenda diversity given by the Shannon entropy, give an insight of independent behavior, in certain particular dates,  of the public and the media. Its identification can be a starting point to study the media reaction to a change in audience interests.
+Finally, it is important to say that the Jensen-Shannon distance, together with the measurement of agenda diversity given by the Shannon entropy, give an insight of independent behavior, in certain particular dates,  of the public and the media. Its identification can be a starting point to study the media reaction to a change in audience interests.
  
 \subsection*{Agenda bias in different media outlets}
 
@@ -476,19 +480,19 @@ We also show the radar plots with the average distribution, as made in figure \r
 \par In figure \ref{fig:news_agenda} we can qualitative look at the differences between the newspaper agendas.
 For instance, we can see how the newspaper called \emph{P\'agina 12} gave more importance to the topics \emph{Missing person} and \emph{Social leader}, while it reduces to minimum the coverage of the topic  \emph{Former Planning minister} as the others did.
 
-\par In other to detect significant bias coverage of a given newspaper, we again calculate the Jensen-Shannon distance, but between the individual newspapers agenda and the Media Agenda.
+\par In order to detect significant bias coverage of a given newspaper, we again calculate the Jensen-Shannon distance, but between the individual newspapers agenda and the Media Agenda.
 Note that this is the distance between the distributions of figure \ref{fig:news_agenda} and the top panel of figure \ref{fig:all_agenda}. 
  In figure \ref{fig:jensen_shannon_news} we show the Jensen-Shannon distance as a function of time.
 We detect three points as outliers, although we finally disregarded point \textbf{(b)} due to a lack of  information of newspaper \emph{Infobae} in that period. 
-The other two points corresponds to differences between \emph{P\'agina 12} and the other newspapers and correspond to differences in the coverage of the topic \emph{Missing person}.
+The other two points correspond to differences between \emph{P\'agina 12} and the other newspapers and correspond to differences in the coverage of the topic \emph{Missing person}.
 
-\par Point \textbf{(a)} corresponds  to the first news the disappearance of Santiago Maldonado, reported by \emph{P\'agina 12} before the primary elections, and point \textbf{(c)} corresponds to  the two months' rally after the disappearance  (see \textbf{Supplementary Material}). Another singularity of point \textbf{(c)} corresponds to a greater coverage of \emph{P\'agina 12} in the topic \emph{Social leader} while the other media outlets seem to be more interested in the topic \emph{Former Vice-President}.
+\par Point \textbf{(a)} corresponds  to the first news of the disappearance of Santiago Maldonado, reported by \emph{P\'agina 12} before the primary elections, and point \textbf{(c)} corresponds to  the two months rally after the disappearance  (see \textbf{Supplementary Material}). Another singularity of point \textbf{(c)} corresponds to a greater coverage of \emph{P\'agina 12} in the topic \emph{Social leader} while the other media outlets seem to be more interested in the topic \emph{Former Vice-President}.
 
-\par The greater coverage in the topic \emph{Missing person} by \emph{P\'agina 12} is even more clear if we inspect the temporal profile of the topic and compare the coverage given by each newspaper. A difference in the coverage is what it is called \emph{coverage bias} \cite{dallmann2015media}.  In figure \ref{fig:topics_temporal_profiles} we show the temporal profile of the topic \emph{Missing person} (panel (a)) and the topic \emph{Former Planning minister} in panel (b), as an example where the behavior is the opposite, as can be seen below.
+\par The greater coverage in the topic \emph{Missing person} by \emph{P\'agina 12} is even more clear if we inspect the temporal profile of the topic and compare the coverage given by each newspaper. Differences in the coverage are due to  \emph{coverage bias} \cite{dallmann2015media}.  In figure \ref{fig:topics_temporal_profiles} we show the temporal profile of the topic \emph{Missing person} (panel (a)) and the topic \emph{Former Planning minister} in panel (b), as an example where the behavior is the opposite, as can be seen below.
 
-\par From panel (a) of figure \ref{fig:topics_temporal_profiles}, we can see the larger coverage of \emph{P\'agina 12} in comparison to other newspapers at the beginning of the period. For example, we can quantify this difference calculating  the median of the signals. If we focus on the period between July 31st and August 27th, the median of the topic relative weight in \emph{P\'agina 12} is roughly 0.14 and this is statistically significantly larger ($p < 10^{-7}$) than other medians, which are lower than 0.05.
-Analyzing the same period, but in panel (b), we again can show that the median in \emph{P\'agina 12}, which is roughly 0.01, is lower than the others, which oscillate around 0.05 ($p<10^{-3}$).
-This quantification is proposed as method of studying coverage bias in the context of the methodology implemented in our work. 
+\par From panel (a) of figure \ref{fig:topics_temporal_profiles}, we can see the larger coverage of \emph{P\'agina 12} in comparison to other newspapers at the beginning of the period. For example, we can quantify this difference calculating  the median of the signals. If we focus on the period between July 31st and August 27th, the median of the topic relative weight in \emph{P\'agina 12} agenda is roughly 0.14 and this is statistically significantly larger ($p < 10^{-7}$) than other medians, which are lower than 0.05.
+Analyzing the same period, but in panel (b), we  can show again that the median in \emph{P\'agina 12} agenda, which is roughly 0.01, is lower than the others, which oscillate around 0.05 ($p<10^{-3}$).
+This quantification is proposed as a method of studying coverage bias in the context of the methodology implemented in our work. 
 
 \par Finally, in figure \ref{fig:topics_temporal_profiles} we also show the topic keywords word clouds, highlighting the most frequently mentioned in each newspaper and filtering the common words to all newspapers.
 Although most of the words are not relevant enough, some of them are quite interesting, for instance the word \emph{represi\'on} (repression) when \emph{P\'agina 12} talks about the topic \emph{Missing Person} and the word \emph{Cristina} (\emph{Fern\'andez de Kirchner}, former president) which is employed by all newspapers except \emph{P\'agina 12} when they  talk about the topic \emph{Former Planning minister} (see \textbf{Supplementary Material}).
@@ -498,39 +502,43 @@ We think that a deeper study of the topic keywords could be a first approximatio
 \label{sec:who_sets}
 
 \par In a world where social media exists and the feedback between the media and audience is common currency, nowadays the idea that the media sets the agenda and the audience blindly follows it (as it's seemed to be suggested in the original work of McCombs) is too naive. Based on the data analyzed above, the behavior of the Media and Public Agendas, either by looking at Google Trends or Twitter, shows periods of strong similarity, for instance in the presence of an unexpected event, and periods of disengagement. 
-Therefore, it is not trivial to establish a causal relationship between the agendas, specially when they are represented as evolving in time topic distributions as we did in this work. 
+Therefore, it is not trivial to establish a causal relationship between the agendas, specially when they are represented as time.evolving topic distributions as we did in this work. 
 However, it is possible to discuss agenda-setting if we focus on a single topic.
  We think that the \emph{Missing person} topic is the most adequate topic to be discussed because:
 \begin{itemize} 
-\item It caused a great impact in both the media and the audience
+\item It caused a great impact in both the media and the audience;
 \item  its coverage fully deploys along the time lapse analyzed in this manuscript (see \textbf{Supplementary Material}).
 \end{itemize}
 
 \par In figure \ref{fig:Maldonado_setagenda} panel (a), we show the \emph{Missing Person} relative weight from both the Media and Public Agendas. 
 After the initial coverage, the agendas seem to differentiate around August 15th, when the topic starts to become more important in the Public Agendas than in the Media one. 
 Around August 24th, the topic abruptly increases in the audience interests while the reaction in the media is slower, showing a significant peak in the plot of the discrete difference of the temporal profiles (panel (b)). This date is very close to August 26th, when a campaign in social media took place. After that event, the media increases its coverage about the topic. 
-Is this a case of reverse agenda-setting \cite{russell2014dynamics}, when a discussion in a given social network triggers the interest of the media? 
-In order to understand this behaviour, we calculate the cumulative coverage of the \emph{Missing Person} topic, which is displayed in figure \ref{fig:Maldonado_setagenda} panel (c).
+
+In order to understand this behaviour we calculate the cumulative coverage of the \emph{Missing Person} topic, which is displayed in figure \ref{fig:Maldonado_setagenda} panel (c).
 The cumulative coverage of the \emph{Missing Person} topic is defined to be the numerical integration between the initial date and the current date, of the topic temporal profile in each media outlets (figure \ref{fig:topics_temporal_profiles}) and in the Google and Twitter Agendas (which can be seen in figure \ref{fig:Maldonado_setagenda} panel (a)). 
 This quantity shows us how the media and public attention have been accumulated since the first events.
-\par The figure \ref{fig:Maldonado_setagenda} panel (c) shows that it is not as simple as to say that the Public Agenda sets the Media one: 
-Before the \emph{Missing Person} topic becomes prominent to the public, \emph{P\'agina 12} was leading the coverage of this topic with respect to the rest of the media.
-It is important to recall that \emph{P\'agina 12} is the newspaper with fewer readers among the analyzed ones.
-This fact leads to a complex agenda-setting dynamics within the \emph{Missing Person} topic: The media outlet with less contribution in the Media Agenda construction, can still put in public debate a topic of its interest.
-As the audience becomes more concerned about this topic, it is amplified by both reiterative Google searches and discussions in social networks. Due to this increasing public interest, the rest of the media ought to pay attention to this subject and finally, the topic becomes also prominent to the Media Agenda. 
-\par Beside the analysis performed above, there are two important facts that must be mentioned about the \emph{Missing Person} topic: First, the disappearance of a person is a very sensitive theme for the Argentinian society, which can explain why this particular topic triggered the audience interest; and second, there were political reasons why \emph{P\'agina 12} was particularly interested in covering this topic since the beginning, while the rest of the media did not until the topic was prominent to the Public Agenda (see \textbf{Supplementary Material}).
-\par The analysis of the cummulative coverage allows us to face the question about causality at least in a qualitative way.
+
+\par The figure \ref{fig:Maldonado_setagenda} panel (c) shows a complex agenda-setting dynamics within the \emph{Missing Person} topic: The least sold newspaper (\emph{P\'agina 12}) triggered a public debate  via a positive feedback mechanism reinforced by reiterative Google searches and discussions in social networks. Due to this increasing public interest, the rest of the media were forced to pay attention to this subject and finally, the topic becomes also prominent to the Media Agenda. 
+
+%\par The figure \ref{fig:Maldonado_setagenda} panel (c) shows that it is not as simple as to say that the Public Agenda sets the Media one: Before the \emph{Missing Person} topic becomes prominent to the public, \emph{P\'agina 12} was leading the coverage of this topic with respect to the rest of the media. It is important to recall that \emph{P\'agina 12} is the newspaper with fewer readers among the analyzed ones. This fact leads to a complex agenda-setting dynamics within the \emph{Missing Person} topic: The media outlet with less contribution in the Media Agenda construction, can still put in public debate a topic of its interest. As the audience becomes more concerned about this topic, it is amplified by both reiterative Google searches and discussions in social networks. Due to this increasing public interest, the rest of the media ought to pay attention to this subject and finally, the topic becomes also prominent to the Media Agenda. 
+
+\par Beside the analysis performed above, there are two important facts that must be mentioned about the \emph{Missing Person} topic: First, the disappearance of a person is a very sensitive issue in the Argentinian society, which can explain why this particular topic triggered the audience interest; and second, there were political reasons why \emph{P\'agina 12} was particularly interested in covering this topic since the beginning, while the rest of the media did not until the topic was prominent to the Public Agenda (see \textbf{Supplementary Material}).
+\par The analysis of the cumulative coverage allows us to face the question about causality at least in a qualitative way.
 However, it was possible to highlight the complex feedback dynamics that take place between public and media agendas.
 %There are different metrics that would help in this question, such as Granger causality or correlation by sliding windows. We think that this analysis must be performed with extreme care since the acquirement of the data. With this work we aimed to provide a quantitative characterization of the behavior of the Media and the Public but not to establish direction of causation, which we hope this to be the core of future ones.
 
 \section*{Conclusions}
 
-\par The mass media play a fundamental role in opinion formation and therefore, it's of vital importance to have an accurate  quantitative description of the Media  and Public Agenda and their relationship in the framework of agenda-setting theory.
-In this work, through the implementation of a topic detection algorithm we describe the Media Agenda as a distribution which evolves in time and which is defined in a topic space which emerges from the analysis of the corpus. This gave us an insight of how we can construct and follow the audience interests, i.e the Public Agenda, in order to compare with the media interests. 
 
-\par Given the Agendas, we found that the Public one is usually less diverse than the Media, showing that when there is a very attractive topic, the audience focuses on this one, meanwhile the media keep certain degree of diversity. 
-On the other hand, the measurement of distances between agendas can be employed to rapidly detect those periods when the public may have an independent behavior respect to the media. The methodology implemented here also allowed us to detect coverage bias in newspapers and gave us a first approximation in the theory of framing. 
-\par We hope that some of the elements studied here will give us insights at the time of proposing a mathematical model about the interaction between mass media and audience. Future works may include a more systematic study and its extension to international media, a deeper study of framing through topic detection and sentiment analysis, and a more quantitative analysis about causality.
+\par The mass media plays a fundamental role in opinion formation and therefore, it’s of vital importance to have an accurate quantitative description of the Media and Public Agenda and their relationship in the framework of agenda-setting theory. In this work, through the implementation of a topic detection algorithm we describe the Media Agenda as a distribution which evolves with time and which is defined in a topic space which emerges intrinsically from the corpus. This gave us an insight of how we can construct and follow the audience interests, i.e the Public Agenda, in order to compare with the media interests. 
+
+\par This approach with newspaper, Twitter and Google trends data, lets us understand that the Public Agenda is usually less diverse than the Media Agenda. Specifically, it is shown that when there is a very attractive topic, the audience naturally focuses only on this one. On the other hand, the media keeps a certain degree of diversity and a wider range of topics. 
+
+\par Interestingly, we show how the measurement of distances between agendas can be employed to rapidly detect those periods when the public may have an independent behaviour respect to the media and also when it does not. The ``Missing person" topic analysis, presented in figure  \ref{fig:Maldonado_setagenda}, shows concrete evidence of a complex dynamics agenda-setting case. Therefore, this work depicts a methodology which can be used in order to understand who sets the agenda: If it is a media outlet or the society.  [SEBAS .... agregar alguna linea de texto de porque esto es muy bueno]
+ 
+\par Moreover, the methodology implemented here also allowed us to detect coverage bias in newspapers and gave us a first approximation in the theory of framing. The implementation of the word clouds and topic detection algorithms, which were described in this work, allow us to clearly observe the huge differences between any pair of newspapers. In particular, it is shown in figures \ref{fig:news_agenda} and \ref{fig:topics_temporal_profiles}  how \emph{Clarín}, \emph{La Nación} and \emph{Infobae}, that share a similar political view with the current government, focused on the former president \emph{Cristina Fern\'andez de Kirchner}, whereas \emph{P\'agina 12}, the newspaper that  criticizes and condemns the government, focused on the denounced repression that \emph{Santiago Maldonado} suffered from the police. 
+
+\par We hope that some of the elements studied here will give us insights at the time of proposing a mathematical model about the interaction between mass media and audience. Future works may include a more systematic study and its extension to international media, a deeper study of framing through topic detection and sentiment analysis, and a more quantitative analysis about causality .
 
 \newpage
 \section*{Supplementary Material}
@@ -622,7 +630,6 @@ P.B. conceived the study. S.P. collected and analysed most of the data. F.A. col
 
 \section*{Acknowledgements}
   We thank Dr. A. Chernomoretz, Dr. M. Otero, Dra. V. Semeshenko, and Dr. M. Trevis\'an for bringing us a critical revision of the article.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%
