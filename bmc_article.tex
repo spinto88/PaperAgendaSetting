@@ -75,12 +75,15 @@
 %\def\includegraphic{}
 %\def\includegraphics{}
 \usepackage{graphicx}
+\usepackage{endnotes}
 
 
 
 %%% Put your definitions there:
 \startlocaldefs
 \endlocaldefs
+
+\let\footnote=\endnote
 
 
 %%% Begin ...
@@ -197,7 +200,7 @@ The mass media plays a fundamental role in the formation of public opinion, eith
 consuming news from the media. But what are the dynamics of the agenda and how the people become interested in their different topics? 
 This  question cannot be answered without proper quantitative measures of agenda dynamics and public attention. 
 In this work we study the agenda of newspapers in comparison with public interests  by performing topic detection over the news and identifying the main topics covered and their evolution over time. 
-We measure agenda diversity as a function of time using the Shannon entropy and differences between agendas using the Jensen-Shannon distance. We found that the Public Agenda is less diverse than the Media Agenda, especially when there is a very attractive topic and the audience naturally focuses only on this one. Using the same methodology we  detect coverage bias in newspapers and have a first approximation to the theory of framing.
+We measure agenda diversity as a function of time using the Shannon entropy and differences between agendas using the Jensen-Shannon distance. We found that the Public Agenda is less diverse than the Media Agenda, especially when there is a very attractive topic and the audience naturally focuses only on this one. Using the same methodology we  detect coverage bias in newspapers and framing.
 Finally it was possible to identify a complex agenda-setting dynamics within a given topic where the least sold newspaper  triggered a public debate  via a positive feedback mechanism with social networks discussions which install the issue in the Media Agenda.\\
 
 \end{abstract}
@@ -213,10 +216,10 @@ Finally it was possible to identify a complex agenda-setting dynamics within a g
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{keyword}
-\kwd{agenda-setting}
+\kwd{mass media influence}
 \kwd{opinion formation}
 \kwd{topic detection}
-\kwd{mass media influence}
+\kwd{agenda-setting}
 \end{keyword}
 
 % MSC classifications codes, if any
@@ -546,11 +549,11 @@ The generality of our method allows to easily face up the agenda-setting issue i
 \subsection*{Context}
 \label{sec:Context}
 
-\par We provide here a more detailed explanation of the topics discussed within this work. The topics belong to the period between July 31th and November 5th, 2017.
-The ideology of the media in Argentina expresses the highly polarized political climate observed in Argentinian society.
-During the administration of \emph{Cristina Fern\'andez de Kirchner} (2007-2015), the government maintained a conflict with several news organizations.
-It led the media such as \emph{Clar\'in}, \emph{La Naci\'on} and the news portal \emph{Infobae} to be very critics of the \emph{Fern\'andez}'s administration, emphasizing the allegations of corruption related to it, as can be seen in the importance given to the topics \emph{Former Planning minister} and \emph{Former Vice-President}.
-On the other hand, \emph{P\'agina 12} has an opposite ideological inclination, supporting the former administration of \emph{Cristina Kirchner} and therefore being very critical with the current \emph{Mauricio Macri}'s administration, doing special emphasis on issues related to human rights, as can be again observed in the coverage given to the topics \emph{Social leader} and \emph{Missing person}.
+\par Here we provide the context of the the discussed topics  within this work. The news belong to the period between July 31th and November 5th, 2017.
+The bias of the different media outlets reflect the highly polarized political climate observed in Argentinian society.
+During the administration of \emph{Cristina Fern\'andez de Kirchner} (2007-2015), the government confront with several news organizations.
+It led to media outlets such as \emph{Clar\'in}, \emph{La Naci\'on} and the news portal \emph{Infobae} to be very critical of the \emph{Fern\'andez}'s administration, emphasizing the allegations of corruption related to it, as can be seen in the importance given to the topics \emph{Former Planning minister} and \emph{Former Vice-President}.
+On the other hand, \emph{P\'agina 12} has an opposite ideological bias, supporting the former administration of \emph{Cristina Kirchner} and therefore being very critical with the current \emph{Mauricio Macri}'s administration, doing special emphasis on issues related to human rights, as can be again observed in the coverage given to the topics \emph{Social leader} and \emph{Missing person}.
 
 \subsubsection*{\emph{Elections}}
 \par Two legislative elections were celebrated during the period in great part of Argentina: Primary elections on August 13th and the general elections on October 22nd, 2017. 
@@ -558,29 +561,29 @@ A special focus was put on the elections in the Buenos Aires province, where the
 On the other hand, two other candidates that also participated in the election were \emph{Sergio Massa} and \emph{Florencio Randazzo}.
  
 \subsubsection*{Current President}
-\par \emph{Mauricio Macri} is the current Argentinian President since December 2015. 
-Most of the articles in political sections are logically devoted to him under different contexts.
-However, it is important to point out that during the analyzed period, and specially after the general elections of October 22nd, 2017, a controversial labour reform promoted by the government was being discussed.
+\par \emph{Mauricio Macri} is the current Argentinian President since December 2015 and this topic is mainly composed of articles related to his administration, specially after the general elections of October 22nd, 2017, when a labour reform promoted by the government was being discussed.
 
 \subsubsection*{\emph{Missing Person}}
-\par \emph{Santiago Maldonado} vanished on August 1st, 2017 after a minor clash between the Gendarmerie (Border Guards) and a group of Mapuches (Patagonian native population), which recognize themselves as the original population of an area in the Patagonia.
+\par \emph{Santiago Maldonado} dissapear on August 1st, 2017 after a minor clash between the Gendarmerie (Border Guards) and a group of Mapuches (Patagonian native population), which recognize themselves as the original population of an area in the Patagonia.
 Since that event, the \emph{Mauricio Macri}'s administration was accused by several people as the responsible for a \textbf{forced disappearance}. 
 \par A very massive campaign in social media took place on August 26th, 2017 under the motto ``Where is Santiago Maldonado?", followed by two massive protest marches to the \emph{Plaza de Mayo} that took place on September 1st and October 1st, of which the first one had a great repercussion due to several incidents that took place during the march.
 \par The body of \emph{Santiago Maldonado} was found dead on October 17th, 2017 in the \emph{Chubut} river, near the place where he was seen for the last time, and the autopsy report told that \emph{Santiago Maldonado} had died from ``asphyxia after being submerged", with no injuries on his body. 
 However, due to the fact that this topic is a very sensitive one for the Argentinian society, the causes of the \emph{Maldonado}'s death are still being investigated.
 
-\subsubsection*{\emph{Former Planning minister} and \emph{Former Vice-President}}
+\subsubsection*{\emph{Former Planning minister} and \emph{Former Vice-President} (Corruption of former administration)}
 
 \par \emph{Julio de Vido} was the Planning minister during the administration of \emph{N\'estor Kirchner} and \emph{Cristina Fern\'andez de Kirchner} (2003-2015). In 2015, he was elected to integrate the Chamber of Deputies, which finally voted to strip \emph{De Vido} of his congressional immunity over corruption allegations and was immediatly jailed on October 27th, 2017.
 
 \par \emph{Amado Boudou} was the Vice-President of the \emph{Cristina Kirchner}'s administration.
 \emph{Boudou} was arrested on November 3rd, 2017 on charges including money-laundering and hiding undeclared assets.
 
-\subsubsection*{\emph{Social leader} and \emph{Prosecutor's death}}
+\subsubsection*{\emph{Social leader}}
 
 \par \emph{Milagro Sala} is an indigenous leader. 
 She has been incarcerated under pre-trial detention ever since she was first detained in January 2016. She faces allegations of embezzlement related to government funding for housing projects managed by T\'upac Amaru, her social organization.
-Sala accused the government of ``violating her human rights", and several people think that she is a political prisoner of the \emph{Mauricio Macri}'s administration.
+Sala accused the government of ``violating her human rights", and several people think that she is a political prisoner.
+
+\subsubsection*{\emph{Prosecutor's death}}
 
 \par \emph{Alberto Nisman} was a special prosecutor who were investigating the 1994 terror attack on the Argentine Israeli Mutual Association (AMIA), until his suspicious death in January 2015.
 During the period analyzed in this work, a team of experts led by the Gendarmerie (Border Guard) concluded that late prosecutor's death may have been a case of murder, not suicide.
@@ -588,13 +591,12 @@ During the period analyzed in this work, a team of experts led by the Gendarmeri
 
 \subsection*{Comparison between NMF and LDA}
 
-\par In this section we apply other topic model, Latent Dirichlet Allocation \cite{blei2003latent} (LDA), to our corpus and compare its results with the shown in this paper. Due to the increasingly use of LDA, we think that a few words about the performance of LDA in our work is necessary. 
+\par In this section we compare the results of applying a different topic model to our corpus. The reference is Latent Dirichlet Allocation \cite{blei2003latent} (LDA) which is one of the more used topic models in last years. 
 
-\par Naturally the topics found with LDA may not coincide with the NMF ones.
-However, one expects that the corpus under study displays some degree of  robustness  when considering different topic models.
-On the other hand, as was discussed in \cite{o2015analysis}, NMF can be a more suitable topic modeling method in certain domains, in the way that it produces more coherent topics, while LDA tends to return higher levels of generality and redundancy. Topic coherence is defined as the semantic interpretability of the terms used to describe a particular topic, although the coherence of a topic may depend on the end user's expectations.
+\par Even though the topics found with LDA may not coincide with the NMF ones, it is expected that the corpus under study displays some degree of  robustness  when considering different topic models.
+On the other hand, as was discussed in \cite{o2015analysis}, NMF can be a more suitable topic modeling method in certain domains, in the way that it produces more coherent topics, while LDA tends to return higher levels of generality and redundancy. Topic coherence is defined as the semantic interpretability of the terms used to describe a particular topic, although the coherence of a topic may depend on the user's expectations.
 
-\par We define a simple coherence measure defined in equation \ref{eq:topic_coherence}, where $d_{ij}$ is the number of documents where the term $i$ and term $j$ appear simultaneously, and $d_{x}$ is the number of documents where appears the term $x$. The summation is over the $N$ top terms of the topic.
+\par We define a simple coherence measure defined in eq. (\ref{eq:topic_coherence}), where $d_{ij}$ is the number of documents where the term $i$ and term $j$ appear simultaneously, and $d_{x}$ is the number of documents where appears the term $x$. The summation is over the $N$ top terms of the topic.
 It's important to note that if two terms have no co-occurrences, the contribution to the summation is zero, and if these ones appear only together the contribution is one.
 A topic with higher coherence is a topic where the terms that define it co-occur frequently.
 
@@ -609,9 +611,9 @@ Unlike to what we see with NMF, the LDA's performance depends strongly on the in
 \par In figure \ref{fig:temporal_profiles_nmf_lda} we show the temporal profiles of topics \emph{Elections} and \emph{Missing Person} for both NMF and LDA. The association between topic models was simply made by looking at the topics which share common keywords.
 As can be seen from figure \ref{fig:temporal_profiles_nmf_lda} and table \ref{table:correlation_nmf_lda}, those LDA topics which can be linked to NMF ones or to a combination of these, show a temporal profile highly correlated. 
 
-\par Nevertheless, LDA returns other topics which can not be directly associated, some of them composed of very general words. 
-By keeping only those topics which can be associated with NMF and re-defining the Media Agenda over this topic space with reduced dimension, we observed similar results by both methods.  
-The same procedure is proposed in absence of an alternative topic model to which make the comparison: Keep only those topics easily interpretable and define the Agendas over this reduced space.
+\par The seven main topics obtained with LDA are practically the same as those found with NMF. Only minor differences, related to other topics composed of very general words were found. This comparison shows us that the Agendas obtained following both methods are similar.
+
+
  
 
 
@@ -623,11 +625,22 @@ The same procedure is proposed in absence of an alternative topic model to which
 
 \begin{backmatter}
 
+\section*{Abbreviations}
+Media Agenda (MA). Public Agenda (PA). Google Trends (GT). Twitter (Tw). Clar\'in (Cl). La Naci\'on (LN). P\'agina 12 (P12). Infobae (Inf). Non-negative matrix factorization (NMF). Latent Dirichlet Allocation (LDA).
+
+\section*{Availability of data and material}
+The data that support the findings of this study are available from Clar\'in at https://www.clarin.com/, La Naci\'on at https://www.lanacion.com.ar/, P\'agina 12 at https://www.pagina12.com.ar/, and Infobae at https://www.infobae.com/, but restrictions apply to the availability of these data and so are not publicly available. Google Trends and Twitter data are respectively openly available at https://trends.google.com/ and https://twitter.com/.
+
 \section*{Competing interests}
   The authors declare that they have no competing interests.
+  
+ \section*{Funding}
+P. Balenzuela was supported by grants PICT 201-0215 from Agencia Nacional de Promoción Científica y Tecnológica and UBACyT 20020170100356BA from University of Buenos Aires.
+F. Albanese and S. Pinto were supported by Conicet fellowships.
+
 
 \section*{Author's contributions}
-PB conceived the study. SP collected and analysed most of the data. FA collected Twitter data. FA, PB, and SP interpreted the data and prepared the manuscript. PB and COD  give the final approval of the version to be published.
+PB conceived the study. SP collected and analyzed most of the data. FA collected Twitter data. FA, PB, and SP interpreted the data and prepared the manuscript. PB and COD  give the final approval of the version to be published.
 
 \section*{Acknowledgements}
   We thank Dr. A. Chernomoretz, Dr. M. Otero, Dra. V. Semeshenko, and Dr. M. Trevis\'an for bringing us a critical revision of the article.
@@ -815,6 +828,7 @@ Prosecutor's death & \textbf{0.83} \\
 \label{table:correlation_nmf_lda}
 \end{table}
 
+\theendnotes
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
